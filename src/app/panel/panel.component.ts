@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class PanelComponent implements OnInit {
 
   constructor() { }
+  parametro: any;
+
+
+
 
   ngOnInit() {
+    this.parametro="0, 72, 133";
   }
 
 }
