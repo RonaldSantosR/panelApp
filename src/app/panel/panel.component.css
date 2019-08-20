@@ -13,18 +13,27 @@ p{
 }
 
 
-h2 {  
-    font-size: 34px;  
-    background: -webkit-linear-gradient(left top, #186BAB, #186BAB,  green,yellow);
-    background: linear-gradient(to bottom right, #186BAB,#186BAB, green,yellow);
+/* h2 {  
+
+    font-size: 82px;  
+    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
+    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
     -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent;  
+    -webkit-text-fill-color: transparent; 
+    margin: 0px;
+    line-height:1;
+
   }  
 
   h1 {  
-    font-size: 24px;  
-    background: -webkit-linear-gradient(left top, #186BAB, #186BAB,  green,yellow);
-    background: linear-gradient(to bottom right, #186BAB,#186BAB, green,yellow);
+    font-size: 50px;  
+    margin: 0px;
+    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
+    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;  
-  }  
+    line-height:1;
+
+  }   */
+
+
