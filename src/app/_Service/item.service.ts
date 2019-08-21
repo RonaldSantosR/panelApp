@@ -7,7 +7,6 @@ import { Subject, Observable } from 'rxjs';
 @Injectable()
 export class ItemService {
 
-
   REQUEST_URL = AppSettings.API_ENDPOINT + AppSettings.ITEM_URL;
 
   public itemsChanged = new Subject<Item[]>();
