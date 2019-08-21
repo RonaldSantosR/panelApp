@@ -6,8 +6,9 @@ import { PanelModule } from './panel/panel.module';
 import { TituloServiceService } from './_Service/titulo-service.service';
 import { RequesterService } from './_Service/requester.service';
 import { ItemService } from './_Service/item.service';
-import { HttpClient } from '../../node_modules/@types/selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http'; 
+
+
 
 @NgModule({
   declarations: [
@@ -17,11 +18,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     PanelModule,
-    HttpClientModule
+    HttpClientModule,
+   
+
   ],
   providers: [TituloServiceService,
               RequesterService,
-              ItemService
+              ItemService,
             ],
   bootstrap: [AppComponent]
 })
