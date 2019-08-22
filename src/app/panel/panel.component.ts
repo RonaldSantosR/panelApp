@@ -21,6 +21,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit() {
     this.listartitulos();
+    this.asignartextotitulo();
   }
 
   listartitulos(){
@@ -30,17 +31,18 @@ export class PanelComponent implements OnInit {
         titulos.forEach(
           titulo=>{
             if(titulo.id==1){
-              this.Asignarcolortitulo1(titulo);
               this.titulo1=titulo.texto;
+              (document.getElementById("texto1")).textContent = this.titulo1;
+              this.Asignarcolortitulo1(titulo);
             }else{
-              this.Asignarcolortitulo2(titulo);
               this.titulo2=titulo.texto;
+              (document.getElementById("texto2")).textContent = this.titulo2;
+              this.Asignarcolortitulo2(titulo);
             }
           }
         )
-
-    })
-    this.asignartextotitulo();
+    }
+  )
   }
 
   asignartextotitulo()
@@ -52,7 +54,7 @@ export class PanelComponent implements OnInit {
 
 
   Asignarcolortitulo1(primertitulo : Titulo) {
-    var element = document.getElementById("1");
+    var element = document.getElementById("texto1");
     element.style.cssText=
     `
     font-size: 50px;  
@@ -65,7 +67,7 @@ export class PanelComponent implements OnInit {
     `;
   }
   Asignarcolortitulo2(segundotitulo : Titulo) {
-    var element = document.getElementById("2");
+    var element = document.getElementById("texto2");
     element.style.cssText=
     `
     font-size: 82px;  
@@ -77,5 +79,71 @@ export class PanelComponent implements OnInit {
     line-height:1;
     `;
   }
+
+  carouselOptions = {
+    margin: 25,
+    nav: true,
+    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items: 1,
+        nav: true
+      },
+      1000: {
+        items: 2,
+        nav: true,
+        loop: false
+      },
+      1500: {
+        items: 3,
+        nav: true,
+        loop: false
+      }
+    }
+  }
+ 
+  images = [
+    {
+      text: "Everfresh Flowers",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/1.jpg"
+    },
+    {
+      text: "Festive Deer",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/2.jpg"
+    },
+    {
+      text: "Morning Greens",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg"
+    },
+    {
+      text: "Bunch of Love",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg"
+    },
+    {
+      text: "Blue Clear",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg"
+    },
+    {
+      text: "Evening Clouds",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/7.jpg"
+    },
+    {
+      text: "Fontains in Shadows",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/8.jpg"
+    },
+    {
+      text: "Kites in the Sky",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/9.jpg"
+    },
+    {
+      text: "Sun Streak",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg"
+    }
+  ]
 
 }
