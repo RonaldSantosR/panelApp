@@ -6,7 +6,9 @@ import { PanelModule } from './panel/panel.module';
 import { TituloServiceService } from './_Service/titulo-service.service';
 import { RequesterService } from './_Service/requester.service';
 import { ItemService } from './_Service/item.service';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
+import { BrowserStorageService } from './_Service/browserstorage.service';
+import { AuthInterceptor } from './_Service/auth-interceptor';
 
 
 
@@ -19,12 +21,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     PanelModule,
     HttpClientModule,
-   
-
   ],
   providers: [TituloServiceService,
               RequesterService,
               ItemService,
+              BrowserStorageService,
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: AuthInterceptor,
+                multi: true
+              },
             ],
   bootstrap: [AppComponent]
 })

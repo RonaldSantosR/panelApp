@@ -6,7 +6,6 @@ import {
 import { Observable } from "rxjs";
 import { BrowserStorageService } from './browserstorage.service';
 import { RequesterService } from './requester.service';
-import 'rxjs/add/operator/do';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
