@@ -17,15 +17,123 @@ export class PanelComponent implements OnInit {
   titulos : Titulo[];
   titulo1 : any;
   titulo2 : any;
+  imagenesordenas: any=[];
+  data1: any[] = [];
+  data2: any[] = [];
+  data3: any[] = [];
+  data4: any[] = [];
 
+  images = [
+    {
+      text: "Lorem Ipsum ispe and scrambled it to make a type specimen book.",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg",
+      ruta: "http://www.exact.com.pe/",
+      orden: 5
+    },
+    {
+      text: "Lorem Ipsum is simply en the industry's standard dummy text ever since the 1500s, when an unknown. ",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg",
+      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
+      orden: 6
+    },
+    {
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/7.jpg",
+      ruta: "http://www.exact.com.pe/",
+      orden: 4
+    },
+    {
+      text: "Lorem n book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/8.jpg",
+      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
+      orden: 3
+    },
+    {
+      text: "text ever to make a type specimen book. It has suralso the leap into electronic typesetting, remaining essentially unchanged.",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/9.jpg",
+      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
+      orden: 2
+    },
+    {
+      text: "Lorem Ipsum is simply dummy text ofc typesetting, remaining essentially unchanged.",
+      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg",
+      ruta: "http://www.exact.com.pe/",
+      orden: 1
+    }
+  ]
 
   ngOnInit() {
-    this.listartitulos();
+    //this.listartitulos();
+    //this.listarpagina();
+    this.listartituloss();
     this.asignartextotitulo();
+    this.ordenarimagenes();
   }
 
-  listartitulos(){
+
+  listarpagina(){
+    this.tituloService.getpagina().subscribe(
+      data=>{
+        Object.keys(data).forEach(key => {
+          var obj = data[key];
+          if(parseInt(key)==1){
+            this.data1=obj;
+          }
+          if(parseInt(key)==2){
+            this.data2=obj;
+            this.listartitulos(this.data2);
+          }
+          if(parseInt(key)==3){
+            this.data3=obj;
+          }          
+          if(parseInt(key)==4){
+            this.data4=obj;
+          }
+        });
+      }
+    )
+
+  }
+
+  listartituloss(){
     this.tituloService.listarTitulos().subscribe(      
+      titulos=>{
+          this.titulos=titulos;
+          titulos.forEach(
+            titulo=>{
+              if(titulo.id==1){
+                this.titulo1=titulo.texto;
+                (document.getElementById("texto1")).textContent = this.titulo1;
+                this.Asignarcolortitulo1(titulo);
+              }else{
+                this.titulo2=titulo.texto;
+                (document.getElementById("texto2")).textContent = this.titulo2;
+                this.Asignarcolortitulo2(titulo);
+              }
+            }
+          )
+      }
+    )
+  }
+
+  listartitulos(data){
+    this.titulos==data;
+    this.titulos.forEach(
+      titulo=>{
+        if(titulo.id==1){
+          this.titulo1=titulo.texto;
+          (document.getElementById("texto1")).textContent = this.titulo1;
+          this.Asignarcolortitulo1(titulo);
+        }else{
+          this.titulo2=titulo.texto;
+          (document.getElementById("texto2")).textContent = this.titulo2;
+          this.Asignarcolortitulo2(titulo);
+        }
+      }
+    )
+
+
+/*     this.tituloService.listarTitulos().subscribe(      
     titulos=>{
         this.titulos=titulos;
         titulos.forEach(
@@ -42,7 +150,21 @@ export class PanelComponent implements OnInit {
           }
         )
     }
-  )
+  ) */
+/*   Object.keys(data).forEach(key => {
+    if(parseInt(key)==1){
+      var index1 = data[key];
+      this.titulo1=titulo.texto;
+      (document.getElementById("texto1")).textContent = this.titulo1;
+      this.Asignarcolortitulo1(titulo);
+    }else{
+      var index2 = data[key];
+      this.titulo2=titulo.texto;
+      (document.getElementById("texto2")).textContent = this.titulo2;
+      this.Asignarcolortitulo2(titulo);
+    }
+  }) */
+
   }
 
   asignartextotitulo()
@@ -85,6 +207,9 @@ export class PanelComponent implements OnInit {
     nav: true,
     navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
     responsiveClass: true,
+    mouseDrag:true,
+    callbacks:true,
+    animateOut:true,
     responsive: {
       0: {
         items: 1,
@@ -107,43 +232,15 @@ export class PanelComponent implements OnInit {
     }
   }
  
-  images = [
-    {
-      text: "Everfresh Flowers",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/1.jpg"
-    },
-    {
-      text: "Festive Deer",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/2.jpg"
-    },
-    {
-      text: "Morning Greens",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/3.jpg"
-    },
-    {
-      text: "Bunch of Love",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg"
-    },
-    {
-      text: "Blue Clear",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg"
-    },
-    {
-      text: "Evening Clouds",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/7.jpg"
-    },
-    {
-      text: "Fontains in Shadows",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/8.jpg"
-    },
-    {
-      text: "Kites in the Sky",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/9.jpg"
-    },
-    {
-      text: "Sun Streak",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg"
-    }
-  ]
 
+
+  ordenarimagenes(){
+    this.images.sort(function(a, b) {
+      return a.orden - b.orden;
+    });
+  }
+
+
+
+  
 }
