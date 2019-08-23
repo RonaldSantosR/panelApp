@@ -7,9 +7,8 @@ import { Titulo } from '../_Model/titulo';
 @Injectable()
 export class titulo {
 
-
   REQUEST_URL = AppSettings.API_ENDPOINT + AppSettings.TITULO_URL;
-
+  REQUEST_URL2=AppSettings.API_ENDPOINT+"/pagina";
   public titulosChanged = new Subject<Titulo[]>();
   private titulos : Titulo[];
 
@@ -28,6 +27,10 @@ export class titulo {
 
   listarTitulos() : Observable<Titulo[]> {
     return this.requester.get<Titulo[]>(this.REQUEST_URL,{});
+  }
+
+  getControlCargosDocumentosDenuncias(): any {
+    return this.requester.get<any>(this.REQUEST_URL2, {});
   }
 
 }

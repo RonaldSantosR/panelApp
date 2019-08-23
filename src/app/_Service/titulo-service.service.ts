@@ -7,7 +7,7 @@ import { RequesterService } from './requester.service';
 @Injectable()
 export class TituloServiceService {
   REQUEST_URL = AppSettings.API_ENDPOINT + AppSettings.TITULO_URL;
-
+  REQUEST_URL2=AppSettings.API_ENDPOINT+"/pagina";
   public titulosChanged = new Subject<Titulo[]>();
   private titulos : Titulo[];
 
@@ -27,6 +27,10 @@ export class TituloServiceService {
 
   listarTitulos() : Observable<Titulo[]> {
     return this.requester.get<Titulo[]>(this.REQUEST_URL,{});
+  }
+
+  getpagina(): any {
+    return this.requester.get<any>(this.REQUEST_URL2, {});
   }
 
 }

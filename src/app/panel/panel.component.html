@@ -1,12 +1,12 @@
 <div class="row">
 
-<!--   <div class="col-10">
+  <!--   <div class="col-10">
     <div class="pb-2 mt-4 mb-2">
       <h2>NUESTRO PORTAFOLIO</h2>
       <h1>DE SERVICIOS</h1>
     </div>
   </div> -->
-<!-- <div class="col-10">
+  <!-- <div class="col-10">
     <div class="pb-2 mt-4 mb-2">
         <p class="text-center">NUESTRO PORTAFOLIO</p>
         <strong><p class="text-center">DE SERVICIOS</p></strong>
@@ -14,19 +14,20 @@
 </div> -->
 </div>
 
-<div class="container pb-2 mt-4 mb-2 ">
+<div class="container pb-2 mt-4 mb-5 ">
   <br>
-    <div class="row justify-content-center">
-      <label id="texto1"></label>  
-    </div>
-    <div class="row justify-content-center">
-      <strong><label id="texto2"></label></strong>
-      </div>
+  <div class="row justify-content-center">
+    <label id="texto1"></label>
   </div>
+  <div class="row justify-content-center">
+    <strong>
+      <label id="texto2"></label>
+    </strong>
+  </div>
+</div>
 
-  <style>
-
-/* h2 {  
+<style>
+  /* h2 {  
 font-size: 82px;  
 background: -webkit-linear-gradient(left top, #004885 , #004885,  #269FC0,#B4D7EB);
 background: linear-gradient(to bottom right, #004885   ,#004885, #269FC0,#B4D7EB);
@@ -48,8 +49,7 @@ line-height:1;
 
 }  
    */
-
-  </style>
+</style>
 <br>
 <!-- <div class="container-fluid pb-2 mt-4 mb-2">
   <div class="row justify-content-center">
@@ -91,11 +91,23 @@ line-height:1;
 </div>
  -->
 
-<owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-    <div class="item" *ngFor="let image of images;let i= index">
-      <img class="slide-image" src="{{image.image}}" >
-      <div class="slide-text">
-        <h4>{{image.text}}</h4>
+<div class="row">
+  <div class="container mt-5">
+    <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+      <div class="item" *ngFor="let image of images">
+<!--         <div class="view third-effect">
+                          <a href="{{image.ruta}}" class="info" target="_blank">
+                    <img class="slide-image" src="{{image.image}}"> </a> 
+            <div class="mask"> 
+            </div>
+        </div> -->
+
+        <a href="{{image.ruta}}" class="info" target="_blank">
+            <img class="slide-image" src="{{image.image}}"> </a> 
+        <div class="slide-text">
+          <p>{{image.text}}</p>
+        </div>
       </div>
-    </div>
-</owl-carousel>
+    </owl-carousel>
+  </div>
+</div>
