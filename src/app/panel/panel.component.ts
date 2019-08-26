@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { titulo } from '../_Service/titulo.service';
 import { Titulo } from '../_Model/titulo';
 import { TituloServiceService } from '../_Service/titulo-service.service';
+import { PaginaService } from '../_Service/pagina.service';
+import { Item } from '../_Model/Item';
+import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/platform-browser';
 
 @Component({
   selector: 'app-panel',
@@ -11,10 +14,12 @@ import { TituloServiceService } from '../_Service/titulo-service.service';
 export class PanelComponent implements OnInit {
 
   constructor(
-      public tituloService : TituloServiceService
+      public tituloService : TituloServiceService,
+      public paginaService : PaginaService,
+      public sanitization : DomSanitizer
   ) { 
   }
-  titulos : Titulo[];
+  titulos : Titulo[] =[];
   titulo1 : any;
   titulo2 : any;
   imagenesordenas: any=[];
@@ -22,7 +27,13 @@ export class PanelComponent implements OnInit {
   data2: any[] = [];
   data3: any[] = [];
   data4: any[] = [];
+  titulo : Titulo;
+  item : Item;
+  items : Item[] =[];
+  imagenes : any[] = [];
+  user_photo: SafeResourceUrl;
 
+  
   images = [
     {
       text: "Lorem Ipsum ispe and scrambled it to make a type specimen book.",
@@ -65,9 +76,88 @@ export class PanelComponent implements OnInit {
   ngOnInit() {
     //this.listartitulos();
     //this.listarpagina();
-    this.listartituloss();
+    //this.listartitulos();
+    this.llenarPaginaPrincipal()
     this.asignartextotitulo();
     this.ordenarimagenes();
+  }
+
+
+  llenarPaginaPrincipal(){
+    this.paginaService.listarPaginaPrincipal().subscribe(
+     (data:any) =>{
+       Object.keys(data).forEach(key1 =>{
+         if(parseInt(key1) === 1){
+          var obj1 = data[key1];
+          this.datatitulo(obj1);
+          this.listartitulos();
+           //this.tituloService.listarTitulos(obj1);
+         } else if(parseInt(key1)===2){
+          var obj1 = data[key1];
+          this.datapagina(obj1);
+          this.listaritems();
+         }else if (parseInt(key1)===3){
+           //
+         }
+       });
+     }
+
+    );
+  }
+
+  datapagina(data){
+    Object.keys(data).forEach(key1 =>{
+      var obj1 = data[key1];
+      console.log(this.titulo)
+      let ite = Object.assign({}, this.item);
+      ite.id = parseInt(obj1['id']);
+      ite.nombre = obj1['nombre'];
+      ite.descripcion = obj1['descripcion'];
+      //ite.ruta_imagen =  obj1['ruta_imagen'];
+      ite.ruta_imagen = this.sanitization.bypassSecurityTrustResourceUrl(
+        'data:image/*;base64,' + obj1['ruta_imagen']);
+      ite.orden = parseInt(obj1['orden']);
+      ite.color = obj1['color'];
+      ite.link_ruta = obj1['link_ruta'];
+      ite.tipoItem = obj1['tipoItem'];
+      this.items.push(ite);
+    })    
+  }
+
+  //obj1['ruta_imagen']+".png"
+
+  datatitulo(data){
+    Object.keys(data).forEach(key1 =>{
+      var obj1 = data[key1];
+      console.log(this.titulo)
+      let titul = Object.assign({}, this.titulo);
+      titul.id = parseInt(obj1['id']);
+      titul.texto = obj1['texto'];
+      titul.colorAlto = obj1['colorAlto'];
+      titul.colorMedio = obj1['colorMedio'];
+      titul.opacidad = obj1['opacidad'];
+      titul.colorBajo = obj1['colorBajo'];
+      this.titulos.push(titul)
+      //id = parseInt(data['id']);
+      //ti.id=parseInt(obj1['id']);
+      //var obj1 = data[key1];
+      //id = parseInt(obj1['id']);
+/*       this.titulo.texto=obj1['texto'];
+      this.titulo.colorAlto=obj1['colorAlto'];
+      this.titulo.colorMedio=data[key1];
+      this.titulo.colorBajo=data[key1];
+      this.titulo.opacidad=data[key1];
+      this.titulos.push(this.titulo); */
+
+    })
+  }
+
+  listaritems(){
+      this.items.forEach(
+        item=>{
+          this.imagenes.push(item);
+        }
+      )
   }
 
 
@@ -81,7 +171,7 @@ export class PanelComponent implements OnInit {
           }
           if(parseInt(key)==2){
             this.data2=obj;
-            this.listartitulos(this.data2);
+            //this.listartitulos(this.data2);
           }
           if(parseInt(key)==3){
             this.data3=obj;
@@ -116,8 +206,7 @@ export class PanelComponent implements OnInit {
     )
   }
 
-  listartitulos(data){
-    this.titulos==data;
+  listartitulos(){
     this.titulos.forEach(
       titulo=>{
         if(titulo.id==1){
