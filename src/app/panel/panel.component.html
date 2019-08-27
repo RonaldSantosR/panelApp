@@ -103,7 +103,7 @@ line-height:1;
         </div> -->
 
         <a href="{{item.link_ruta}}" class="info" target="_blank">
-            <img class="slide-image" src="{{item.ruta_imagen}}"> </a> 
+            <img class="slide-image" [src]="item.ruta_imagen"> </a> 
         <div class="slide-text">
           <p>{{item.descripcion}}</p>
         </div>
@@ -111,3 +111,4 @@ line-height:1;
     </owl-carousel>
   </div>
 </div>
+
