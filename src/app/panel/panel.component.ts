@@ -9,6 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/pl
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
+
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
@@ -115,7 +116,7 @@ export class PanelComponent implements OnInit {
       ite.descripcion = obj1['descripcion'];
       //ite.ruta_imagen =  obj1['ruta_imagen'];
       ite.ruta_imagen = this.sanitization.bypassSecurityTrustResourceUrl(
-        'data:image/*;base64,' + obj1['ruta_imagen']);
+        'data:image/png;base64,' + obj1['ruta_imagen']);
       ite.orden = parseInt(obj1['orden']);
       ite.color = obj1['color'];
       ite.link_ruta = obj1['link_ruta'];
@@ -158,6 +159,12 @@ export class PanelComponent implements OnInit {
           this.imagenes.push(item);
         }
       )
+  }
+
+  ordenarimagenes(){
+    this.images.sort(function(a, b) {
+      return a.orden - b.orden;
+    });
   }
 
 
@@ -294,12 +301,14 @@ export class PanelComponent implements OnInit {
   carouselOptions = {
     margin: 25,
     nav: true,
+    //rewindNav : true,
+    //navText: ["<img src='./assets/images/img.png' class='imagennet'> ","<img src='./assets/images/img.png'>"],
+    //navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"],
     navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
     responsiveClass: true,
     mouseDrag:true,
     callbacks:true,
-    animateOut:true,
-    responsive: {
+      responsive: {
       0: {
         items: 1,
         nav: true
@@ -323,11 +332,7 @@ export class PanelComponent implements OnInit {
  
 
 
-  ordenarimagenes(){
-    this.images.sort(function(a, b) {
-      return a.orden - b.orden;
-    });
-  }
+
 
 
 

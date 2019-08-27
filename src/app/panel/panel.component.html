@@ -95,13 +95,12 @@ line-height:1;
   <div class="container mt-5">
     <owl-carousel [options]="carouselOptions" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="item" *ngFor="let item of items">
-<!--         <div class="view third-effect">
+        <!--<div class="view third-effect">
                           <a href="{{image.ruta}}" class="info" target="_blank">
                     <img class="slide-image" src="{{image.image}}"> </a> 
             <div class="mask"> 
             </div>
         </div> -->
-
         <a href="{{item.link_ruta}}" class="info" target="_blank">
             <img class="slide-image" src="{{item.ruta_imagen}}"> </a> 
         <div class="slide-text">
@@ -111,3 +110,4 @@ line-height:1;
     </owl-carousel>
   </div>
 </div>
+

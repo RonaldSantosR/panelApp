@@ -1,10 +1,10 @@
-.pointable {
+/* .pointable {
     cursor: pointer;
 }
 
 div.center {
     overflow-x: scroll;
-}
+} */
 
 p{
   margin:20px;
@@ -90,6 +90,8 @@ p{
   } */
   .slide-image{
     transition: 0.5s;
+    width: 50px; 
+    height: 80px;
   }
 
   .slide-image:hover {
@@ -98,9 +100,14 @@ p{
     overflow:hidden;
   }
 
+  .imagennet {
+    width: 10px; 
+    height: 10px;
+  }
 
 
-  .owl-carousel {
+
+/*   .owl-carousel {
     width: 90% !important;
     margin: 10% auto;
     
@@ -154,7 +161,7 @@ p{
  
  .third-effect a.info {
     position:relative;
-    top:-10px; /* Center the link */
+    top:-10px; 
     opacity: 0;
     transition: opacity 0.5s 0s ease-in-out;
  }
@@ -167,4 +174,52 @@ p{
  .third-effect:hover a.info {
     opacity:1;
     transition-delay: 0.3s;
- }
+ } */
+
+ i{
+  color: black;
+  }
+
+
+  .owl-carousel {
+    width: 90% !important;
+    margin: 10% auto;
+  }
+   
+  .owl-carousel .owl-nav {
+    overflow: hidden;
+    height: 0px;
+  }
+   
+  .owl-carousel .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 30% !important;
+  }
+   
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+   
+  .owl-carousel .prev-slide {
+    background: url(./assets/images/img.png) no-repeat scroll 0 0;
+    left: -33px;
+  }
+   
+  .owl-carousel .next-slide {
+    background: url(./assets/images/img.png) no-repeat scroll -24px 0px;
+    right: -33px;
+  }
+   
+  .owl-carousel .prev-slide:hover {
+    background-position: 0px -53px;
+  }
+   
+  .owl-carousel .next-slide:hover {
+    background-position: -24px -53px;
+  }
+   
