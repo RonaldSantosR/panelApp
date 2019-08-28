@@ -98,7 +98,9 @@ export class PanelComponent implements OnInit {
           this.datapagina(obj1);
           this.listaritems();
          }else if (parseInt(key1)===3){
-           //
+           var obj1 = data[key1];
+          // this.datafooter(obj1);
+           //this.listarfooter();
          }
        });
      }
@@ -115,7 +117,7 @@ export class PanelComponent implements OnInit {
       ite.nombre = obj1['nombre'];
       ite.descripcion = obj1['descripcion'];
       //ite.ruta_imagen =  obj1['ruta_imagen'];
-      ite.ruta_imagen = this.sanitization.bypassSecurityTrustResourceUrl(
+      ite.ruta_imagen = this.sanitization.bypassSecurityTrustUrl(
         'data:image/png;base64,' + obj1['ruta_imagen']);
       ite.orden = parseInt(obj1['orden']);
       ite.color = obj1['color'];
@@ -152,6 +154,16 @@ export class PanelComponent implements OnInit {
 
     })
   }
+
+/*   datafooter(data){
+    Object.keys(data).forEach(key1 =>{
+      var obj1 = data[key1];
+      
+    })
+
+  } */
+
+
 
   listaritems(){
       this.items.forEach(
@@ -228,6 +240,12 @@ export class PanelComponent implements OnInit {
       }
     )
 
+    
+
+ /*    listarfooter(){
+
+    } */
+
 
 /*     this.tituloService.listarTitulos().subscribe(      
     titulos=>{
@@ -299,14 +317,13 @@ export class PanelComponent implements OnInit {
   }
 
   carouselOptions = {
-    margin: 25,
-    nav: true,
-    //rewindNav : true,
-    //navText: ["<img src='./assets/images/img.png' class='imagennet'> ","<img src='./assets/images/img.png'>"],
+    margin: 100,
+    nav: false,
+    //navText: ["<img src='./assets/images/img.png'> ","<img src='./assets/images/img.png'>"],
     //navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"],
-    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-circle-left'   style=' font-size:50px'   ></i></div>", "<div class='nav-btn next-slide'><i class='fa fa-chevron-circle-right' style=' font-size:50px'  ></i></div>"],
+    //navText: ["hola", "chau"],
     responsiveClass: true,
-    mouseDrag:true,
     callbacks:true,
       responsive: {
       0: {
