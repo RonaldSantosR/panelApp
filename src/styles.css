@@ -1,2 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+
+.owl-carousel {
+    width: 100% !important;
+    margin: 10% auto;
+  }
+   
+  .owl-carousel .owl-nav {
+    overflow: hidden;
+    height: 0px;
+  }
+   
+  .owl-carousel .nav-btn {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    cursor: pointer;
+    top: 30% !important;
+    color:#000;   
+  }
+   
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+   
+  .owl-carousel .prev-slide {
+    background:  no-repeat scroll 0 0;
+    left: -100px;
+  }
+   
+  .owl-carousel .next-slide {
+    background:  no-repeat scroll -24px 0px;
+    right: -100px;
+  }
+/*    
+  .owl-carousel .prev-slide:hover {
+    background-position: none;
+  }
+   
+  .owl-carousel .next-slide:hover {
+    background-position: none;
+  } */
+

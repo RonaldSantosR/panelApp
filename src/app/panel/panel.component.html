@@ -1,7 +1,7 @@
 <div class="row">
 </div>
 
-<div class="container pb-2 mt-4 mb-5 ">
+<div class="container pb-2 mt-4 ">
   <br>
   <div class="row justify-content-center">
     <label id="texto1"></label>
@@ -16,11 +16,11 @@
 <br>
 
 <div class="row">
-  <div class="container mt-5">
+  <div class="container">
     <owl-carousel [options]="carouselOptions" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="item" *ngFor="let item of items">
         <a href="{{item.link_ruta}}" class="info" target="_blank">
-            <img class="slide-image" [src]="item.ruta_imagen"> </a> 
+          <img class="slide-image" [src]="item.ruta_imagen"> </a>
         <div class="slide-text">
           <p>{{item.descripcion}}</p>
         </div>

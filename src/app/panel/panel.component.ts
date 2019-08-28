@@ -10,6 +10,7 @@ import { Footer } from '../_Model/Footer';
 @Component({
   selector: 'app-panel',
   templateUrl: './panel.component.html',
+
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
@@ -191,14 +192,15 @@ asignarcolorfooter(footerPagina : Footer){
   }
 
   carouselOptions = {
-    margin: 25,
-    nav: true,
-    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    margin: 100,
+    nav: false,
+    //navText: ["<img src='./assets/images/img.png'> ","<img src='./assets/images/img.png'>"],
+    //navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"],
+    navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-circle-left'   style=' font-size:50px'   ></i></div>", "<div class='nav-btn next-slide'><i class='fa fa-chevron-circle-right' style=' font-size:50px'  ></i></div>"],
+    //navText: ["hola", "chau"],
     responsiveClass: true,
-    mouseDrag:true,
     callbacks:true,
-    animateOut:true,
-    responsive: {
+      responsive: {
       0: {
         items: 1,
         nav: true
