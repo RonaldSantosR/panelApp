@@ -9,6 +9,9 @@ import { ItemService } from './_Service/item.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; 
 import { BrowserStorageService } from './_Service/browserstorage.service';
 import { AuthInterceptor } from './_Service/auth-interceptor';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { OwlModule } from '../../node_modules/ngx-owl-carousel';
+
 
 
 
@@ -21,6 +24,8 @@ import { AuthInterceptor } from './_Service/auth-interceptor';
     AppRoutingModule,
     PanelModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
+    OwlModule
   ],
   providers: [TituloServiceService,
               RequesterService,

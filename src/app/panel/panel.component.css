@@ -1,116 +1,47 @@
-.pointable {
-    cursor: pointer;
-}
-
-div.center {
-    overflow-x: scroll;
-}
 
 p{
-  margin:20px;
+  margin:35px;
   padding:0;
   font-size: 20px;  
   text-align: justify;
 }
 
 
-/* h2 {  
 
-    font-size: 82px;  
-    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
-    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent; 
-    margin: 0px;
-    line-height:1;
-
-  }  
-
-  h1 {  
-    font-size: 50px;  
-    margin: 0px;
-    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
-    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent;  
-    line-height:1;
-
-  }   */
-
-
-
-/*   s.owl-carousel {
-    width: 90% !important;
-    margin: 10% auto;
-  }
-   
-  .owl-carousel .owl-nav {
-    overflow: hidden;
-    height: 0px;
-  }
-   
-  .owl-carousel .nav-btn {
-    height: 47px;
-    position: absolute;
-    width: 26px;
-    cursor: pointer;
-    top: 30% !important;
-  }
-   
-  .owl-carousel .owl-prev.disabled,
-  .owl-carousel .owl-next.disabled {
-    pointer-events: none;
-    opacity: 0.2;
-  }
-   
-
-   
-  .owl-carousel .prev-slide:hover {
-    background-position: 0px -53px;
-  }
-   
-  .owl-carousel .next-slide:hover {
-    background-position: -24px -53px;
-  }
-
-
-  .carousell {
-    margin-top:20px;
-  }   */
-
-
-   /*  .owl-carousel .prev-slide {
-    background: url(./assets/images/nav-icon.png) no-repeat scroll 0 0;
-    left: -33px;
-  }
-   
-  .owl-carousel .next-slide {
-    background: url(./assets/images/nav-icon.png) no-repeat scroll -24px 0px;
-    right: -33px;
-  } */
   .slide-image{
     transition: 0.5s;
+    width: 20px; 
+    height: 80px;
   }
+
+
 
   .slide-image:hover {
     filter: opacity(.5);
-    transform:scale(1.1);
     overflow:hidden;
   }
 
 
 
-  .owl-carousel {
+
+/*  i{
+  color: black;
+  } */
+
+
+/*   .owl-carousel {
     width: 90% !important;
     margin: 10% auto;
-    
   }
+
+   
+  .owl-carousel .owl-sliding {
+    overflow: scroll;
+    height: 150px;
+    background: blue
+    }
   
-  .owl-carousel .owl-nav {
-    overflow: hidden;
-    height: 0px;
-  }
-  
+   
   .owl-carousel .nav-btn {
     height: 47px;
     position: absolute;
@@ -118,53 +49,30 @@ p{
     cursor: pointer;
     top: 30% !important;
   }
-  
+   
   .owl-carousel .owl-prev.disabled,
   .owl-carousel .owl-next.disabled {
     pointer-events: none;
     opacity: 0.2;
   }
-  
+   
   .owl-carousel .prev-slide {
-    background: url(./assets/images/img.png) no-repeat scroll 0 0;
+    background: url(./assets/images/simih.png) no-repeat scroll 0 0;
     left: -33px;
   }
-  
+   
   .owl-carousel .next-slide {
-    background: url(./assets/images/img.png) no-repeat scroll -24px 0px;
+    background: url(./assets/images/simih.png) no-repeat scroll -24px 0px;
     right: -33px;
   }
-  
+   
   .owl-carousel .prev-slide:hover {
     background-position: 0px -53px;
   }
-  
+   
   .owl-carousel .next-slide:hover {
     background-position: -24px -53px;
   }
 
 
-  .third-effect .mask {
-    opacity: 0;
-    overflow:visible;
-    border:100px solid rgba(0,0,0,0.7);
-    box-sizing:border-box;
-    transition: all 0.4s ease-in-out;
- }
- 
- .third-effect a.info {
-    position:relative;
-    top:-10px; /* Center the link */
-    opacity: 0;
-    transition: opacity 0.5s 0s ease-in-out;
- }
- 
- .third-effect:hover .mask {
-    opacity: 1;
-    border:100px solid rgba(0,0,0,0.7);
- }
- 
- .third-effect:hover a.info {
-    opacity:1;
-    transition-delay: 0.3s;
- }
+ */
