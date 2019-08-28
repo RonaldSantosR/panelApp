@@ -5,6 +5,7 @@ import { TituloServiceService } from '../_Service/titulo-service.service';
 import { PaginaService } from '../_Service/pagina.service';
 import { Item } from '../_Model/Item';
 import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/platform-browser';
+import { Footer } from '../_Model/Footer';
 
 @Component({
   selector: 'app-panel',
@@ -32,53 +33,10 @@ export class PanelComponent implements OnInit {
   items : Item[] =[];
   imagenes : any[] = [];
   user_photo: SafeResourceUrl;
-
+  foot : Footer = new Footer();
   
-  images = [
-    {
-      text: "Lorem Ipsum ispe and scrambled it to make a type specimen book.",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/4.jpg",
-      ruta: "http://www.exact.com.pe/",
-      orden: 5
-    },
-    {
-      text: "Lorem Ipsum is simply en the industry's standard dummy text ever since the 1500s, when an unknown. ",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/5.jpg",
-      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
-      orden: 6
-    },
-    {
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/7.jpg",
-      ruta: "http://www.exact.com.pe/",
-      orden: 4
-    },
-    {
-      text: "Lorem n book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/8.jpg",
-      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
-      orden: 3
-    },
-    {
-      text: "text ever to make a type specimen book. It has suralso the leap into electronic typesetting, remaining essentially unchanged.",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/9.jpg",
-      ruta: "https://negocio.pe/servicio-empresas/exact-sac",
-      orden: 2
-    },
-    {
-      text: "Lorem Ipsum is simply dummy text ofc typesetting, remaining essentially unchanged.",
-      image: "https://freakyjolly.com/demo/jquery/PreloadJS/images/10.jpg",
-      ruta: "http://www.exact.com.pe/",
-      orden: 1
-    }
-  ]
-
-  ngOnInit() {
-    //this.listartitulos();
-    //this.listarpagina();
-    //this.listartitulos();
+    ngOnInit() {
     this.llenarPaginaPrincipal()
-    this.asignartextotitulo();
     this.ordenarimagenes();
   }
 
@@ -93,13 +51,13 @@ export class PanelComponent implements OnInit {
           this.listartitulos();
            //this.tituloService.listarTitulos(obj1);
          } else if(parseInt(key1)===2){
-          var obj1 = data[key1];
-          this.datapagina(obj1);
+          var obj2 = data[key1];
+          this.datapagina(obj2);
           this.listaritems();
          }else if (parseInt(key1)===3){
-           var obj1 = data[key1];
-          // this.datafooter(obj1);
-           //this.listarfooter();
+           var obj3 = data[key1];
+           this.datafooter(obj3);
+           this.listarfooter();
          }
        });
      }
@@ -115,7 +73,6 @@ export class PanelComponent implements OnInit {
       ite.id = parseInt(obj1['id']);
       ite.nombre = obj1['nombre'];
       ite.descripcion = obj1['descripcion'];
-      //ite.ruta_imagen =  obj1['ruta_imagen'];
       ite.ruta_imagen = this.sanitization.bypassSecurityTrustUrl(
         'data:image/png;base64,' + obj1['ruta_imagen']);
       ite.orden = parseInt(obj1['orden']);
@@ -125,8 +82,6 @@ export class PanelComponent implements OnInit {
       this.items.push(ite);
     })    
   }
-
-  //obj1['ruta_imagen']+".png"
 
   datatitulo(data){
     Object.keys(data).forEach(key1 =>{
@@ -140,31 +95,29 @@ export class PanelComponent implements OnInit {
       titul.opacidad = obj1['opacidad'];
       titul.colorBajo = obj1['colorBajo'];
       this.titulos.push(titul)
-      //id = parseInt(data['id']);
-      //ti.id=parseInt(obj1['id']);
-      //var obj1 = data[key1];
-      //id = parseInt(obj1['id']);
-/*       this.titulo.texto=obj1['texto'];
-      this.titulo.colorAlto=obj1['colorAlto'];
-      this.titulo.colorMedio=data[key1];
-      this.titulo.colorBajo=data[key1];
-      this.titulo.opacidad=data[key1];
-      this.titulos.push(this.titulo); */
-
     })
   }
 
-/*   datafooter(data){
-    Object.keys(data).forEach(key1 =>{
-      var obj1 = data[key1];
+  datafooter(data){
       
-    })
-
-  } */
-
-
-
-  listaritems(){
+      Object.keys(data).forEach(key1 =>{
+        var obj1 = data[key1];
+      let foote = Object.assign({}, this.foot);
+      foote.id = obj1['id'];
+      foote.color = obj1['color'];
+      foote.descripcion = obj1['descripcion'];
+      foote.colorDescripcion = obj1['colorDescripcion'];
+      foote.logo = this.sanitization.bypassSecurityTrustUrl(
+        'data:image/png;base64,' + obj1['logo']);
+      this.foot.id=foote.id;
+      this.foot.color=foote.color;
+      this.foot.descripcion=foote.descripcion;
+      this.foot.colorDescripcion=foote.colorDescripcion;
+      this.foot.logo=foote.logo
+      })
+    
+  }
+listaritems(){
       this.items.forEach(
         item=>{
           this.imagenes.push(item);
@@ -172,53 +125,7 @@ export class PanelComponent implements OnInit {
       )
   }
 
-
-  listarpagina(){
-    this.tituloService.getpagina().subscribe(
-      data=>{
-        Object.keys(data).forEach(key => {
-          var obj = data[key];
-          if(parseInt(key)==1){
-            this.data1=obj;
-          }
-          if(parseInt(key)==2){
-            this.data2=obj;
-            //this.listartitulos(this.data2);
-          }
-          if(parseInt(key)==3){
-            this.data3=obj;
-          }          
-          if(parseInt(key)==4){
-            this.data4=obj;
-          }
-        });
-      }
-    )
-
-  }
-
-  listartituloss(){
-    this.tituloService.listarTitulos().subscribe(      
-      titulos=>{
-          this.titulos=titulos;
-          titulos.forEach(
-            titulo=>{
-              if(titulo.id==1){
-                this.titulo1=titulo.texto;
-                (document.getElementById("texto1")).textContent = this.titulo1;
-                this.Asignarcolortitulo1(titulo);
-              }else{
-                this.titulo2=titulo.texto;
-                (document.getElementById("texto2")).textContent = this.titulo2;
-                this.Asignarcolortitulo2(titulo);
-              }
-            }
-          )
-      }
-    )
-  }
-
-  listartitulos(){
+listartitulos(){
     this.titulos.forEach(
       titulo=>{
         if(titulo.id==1){
@@ -231,58 +138,32 @@ export class PanelComponent implements OnInit {
           this.Asignarcolortitulo2(titulo);
         }
       }
-    )
+    )} 
 
-    
-
- /*    listarfooter(){
-
-    } */
-
-
-/*     this.tituloService.listarTitulos().subscribe(      
-    titulos=>{
-        this.titulos=titulos;
-        titulos.forEach(
-          titulo=>{
-            if(titulo.id==1){
-              this.titulo1=titulo.texto;
-              (document.getElementById("texto1")).textContent = this.titulo1;
-              this.Asignarcolortitulo1(titulo);
-            }else{
-              this.titulo2=titulo.texto;
-              (document.getElementById("texto2")).textContent = this.titulo2;
-              this.Asignarcolortitulo2(titulo);
-            }
-          }
-        )
+listarfooter(){
+      (document.getElementById("descripcion")).textContent = this.foot.descripcion;
+      this.asignarcolorfooter(this.foot);
     }
-  ) */
-/*   Object.keys(data).forEach(key => {
-    if(parseInt(key)==1){
-      var index1 = data[key];
-      this.titulo1=titulo.texto;
-      (document.getElementById("texto1")).textContent = this.titulo1;
-      this.Asignarcolortitulo1(titulo);
-    }else{
-      var index2 = data[key];
-      this.titulo2=titulo.texto;
-      (document.getElementById("texto2")).textContent = this.titulo2;
-      this.Asignarcolortitulo2(titulo);
-    }
-  }) */
 
-  }
+asignarcolorfooter(footerPagina : Footer){
+    var element = document.getElementById("descripcion");
+    element.style.cssText =
+    `
+    color: `+footerPagina.colorDescripcion+`;
+    background-color : `+footerPagina.color+`;
+    position: fixed;
+    left: 0;
+    right:0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    height:65px;
+    margin:auto;
+    padding: 20px 100px 0px 17px;
+    `;
+  }  
 
-  asignartextotitulo()
-  {
-      (document.getElementById("texto1")).textContent = this.titulo1;
-      (document.getElementById("texto2")).textContent = this.titulo2;
-
-  };
-
-
-  Asignarcolortitulo1(primertitulo : Titulo) {
+ Asignarcolortitulo1(primertitulo : Titulo) {
     var element = document.getElementById("texto1");
     element.style.cssText=
     `
@@ -342,7 +223,7 @@ export class PanelComponent implements OnInit {
 
 
   ordenarimagenes(){
-    this.images.sort(function(a, b) {
+    this.imagenes.sort(function(a, b) {
       return a.orden - b.orden;
     });
   }
