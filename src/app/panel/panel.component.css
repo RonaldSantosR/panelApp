@@ -7,6 +7,78 @@ p{
 }
 
 
+.footer-image{
+  position: relative;
+  width:8%;
+  height:8%;
+  left: 30px;
+  bottom: -260px;
+  
+  
+}
+/* h2 {  
+
+    font-size: 82px;  
+    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
+    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent; 
+    margin: 0px;
+    line-height:1;
+
+  }  
+
+  h1 {  
+    font-size: 50px;  
+    margin: 0px;
+    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
+    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
+    -webkit-background-clip: text;  
+    -webkit-text-fill-color: transparent;  
+    line-height:1;
+
+  }   */
+
+
+
+/*   s.owl-carousel {
+    width: 90% !important;
+    margin: 10% auto;
+  }
+   
+  .owl-carousel .owl-nav {
+    overflow: hidden;
+    height: 0px;
+  }
+   
+  .owl-carousel .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 30% !important;
+  }
+   
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+   
+
+   
+  .owl-carousel .prev-slide:hover {
+    background-position: 0px -53px;
+  }
+   
+  .owl-carousel .next-slide:hover {
+    background-position: -24px -53px;
+  }
+
+
+  .carousell {
+    margin-top:20px;
+  }   */
 
   .slide-image{
     transition: 0.5s;
