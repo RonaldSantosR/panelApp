@@ -8,13 +8,22 @@ p{
 }
 
 
+
+
 .footer-image{
   position: relative;
-  width:8%;
-  height:8%;
-  left: 30px;
-  bottom: -260px;
+  width: 100%;
+  height:100%;
+  left: 40px;
+  bottom: -240px;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px
+  
 }
+
+
+
 /* h2 {  
 
     font-size: 82px;  
