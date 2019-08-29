@@ -18,11 +18,13 @@
 <div class="row">
   <div class="container">
     <owl-carousel [options]="carouselOptions" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-      <div class="item" *ngFor="let item of items">
-        <a href="{{item.link_ruta}}" class="info" target="_blank">
-          <img class="slide-image" [src]="item.ruta_imagen"> </a>
+      <div class="" *ngFor="let item of items">
+      <div class="contenedorimagen mx-4">
+          <a href="{{item.link_ruta}}" class="info container d-flex h-100" target="_blank">
+              <img class="slide-image align-self-center" [src]="item.ruta_imagen"> </a>
+      </div>
         <div class="slide-text">
-          <p>{{item.descripcion}}</p>
+          <p class="m-2">{{item.descripcion}}</p>
         </div>
       </div>
     </owl-carousel>

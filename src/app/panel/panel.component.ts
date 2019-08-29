@@ -196,7 +196,7 @@ asignarcolorfooter(footerPagina : Footer){
     nav: false,
     //navText: ["<img src='./assets/images/img.png'> ","<img src='./assets/images/img.png'>"],
     //navText: ["<i class='fa fa-chevron-circle-left'></i>","<i class='fa fa-chevron-circle-right'></i>"],
-    navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-circle-left'   style=' font-size:50px'   ></i></div>", "<div class='nav-btn next-slide'><i class='fa fa-chevron-circle-right' style=' font-size:50px'  ></i></div>"],
+    navText: ["<div class='nav-btn prev-slide'><i class='fa fa-angle-left'   style=' font-size:50px'   ></i></div>", "<div class='nav-btn next-slide'><i class='fa fa-angle-right' style=' font-size:50px'  ></i></div>"],
     //navText: ["hola", "chau"],
     responsiveClass: true,
     callbacks:true,
@@ -206,11 +206,11 @@ asignarcolorfooter(footerPagina : Footer){
         nav: true
       },
       600: {
-        items: 1,
+        items: 2,
         nav: true
       },
       1000: {
-        items: 2,
+        items: 3,
         nav: true,
         loop: false
       },
