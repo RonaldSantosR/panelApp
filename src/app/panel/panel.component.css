@@ -3,7 +3,8 @@ p{
   margin:35px;
   padding:0;
   font-size: 20px;  
-  text-align: justify;
+  text-align: center;
+  font-family: Helvetica;
 }
 
 
@@ -13,8 +14,6 @@ p{
   height:8%;
   left: 30px;
   bottom: -260px;
-  
-  
 }
 /* h2 {  
 
@@ -83,10 +82,13 @@ p{
   .slide-image{
     transition: 0.5s;
     width: 20px; 
-    height: 80px;
+    vertical-align: middle;
   }
 
-
+.contenedorimagen{
+  /*width: 100%;*/ 
+  height: 150px;
+}
 
   .slide-image:hover {
     filter: opacity(.5);
@@ -148,3 +150,14 @@ p{
 
 
  */
+
+
+
+ @font-face {
+  font-family: 'Helvetica';
+  src: url(./assets/font/HWR.ttf) format("opentype"); 
+}
+
+* {
+  font-family: 'Helvetica', 'arial', sans-serif;
+}
