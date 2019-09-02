@@ -33,7 +33,7 @@ export class PanelComponent implements OnInit {
   titulo : Titulo;
   item : Item;
   items : Item[] =[];
-  imagenes : any[] = [];
+  imagenes : Item[] = [];
   user_photo: SafeResourceUrl;
   foot : Footer = new Footer();
   pag : Pagina = new Pagina();
@@ -41,7 +41,7 @@ export class PanelComponent implements OnInit {
   
     ngOnInit() {
     this.llenarPaginaPrincipal()
-    this.ordenarimagenes();
+/*     this.ordenarimagenes(); */
   }
 
 
@@ -140,6 +140,10 @@ listaritems(){
           this.imagenes.push(item);
         }
       )
+
+      this.imagenes.sort(function(a, b) {
+        return a.orden - b.orden;
+      });
   }
 
 listartitulos(){
@@ -254,11 +258,11 @@ asignarestilofooter(footerPagina : Footer){
  
 
 
-  ordenarimagenes(){
+/*   ordenarimagenes(){
     this.imagenes.sort(function(a, b) {
       return a.orden - b.orden;
     });
-  }
+  } */
 
 
 
