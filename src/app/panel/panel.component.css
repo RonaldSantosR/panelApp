@@ -7,6 +7,10 @@ p{
   font-family: Helvetica;
 }
 
+.ove{
+  overflow: hidden;
+}
+
 
 .footer-image{
   position: relative;

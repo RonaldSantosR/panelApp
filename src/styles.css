@@ -30,19 +30,21 @@
    
   .owl-carousel .prev-slide {
     background:  no-repeat scroll 0 0;
-    left: -100px;
+    left: -70px;
   }
    
   .owl-carousel .next-slide {
     background:  no-repeat scroll -24px 0px;
-    right: -100px;
+    right: -70px;
   }
-/*    
-  .owl-carousel .prev-slide:hover {
-    background-position: none;
-  }
-   
-  .owl-carousel .next-slide:hover {
-    background-position: none;
-  } */
 
+  .owl-carousel .prev-slide:hover{
+    background-position: 0px -53px;
+   }
+   .owl-carousel .next-slide:hover{
+   background-position: -24px -53px;
+   }  
+
+/*   .colorfondo{
+    background-color:#FF0000;
+  } */
