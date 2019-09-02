@@ -20,7 +20,9 @@ body {
 
 }
 
-
+.ove{
+  overflow: hidden;
+}
 
 /* h2 {  
 

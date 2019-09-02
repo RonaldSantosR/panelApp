@@ -6,6 +6,7 @@ import { PaginaService } from '../_Service/pagina.service';
 import { Item } from '../_Model/Item';
 import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/platform-browser';
 import { Footer } from '../_Model/Footer';
+import { Pagina } from '../_Model/Pagina';
 
 @Component({
   selector: 'app-panel',
@@ -35,6 +36,8 @@ export class PanelComponent implements OnInit {
   imagenes : any[] = [];
   user_photo: SafeResourceUrl;
   foot : Footer = new Footer();
+  pag : Pagina = new Pagina();
+
   
     ngOnInit() {
     this.llenarPaginaPrincipal()
@@ -59,12 +62,26 @@ export class PanelComponent implements OnInit {
            var obj3 = data[key1];
            this.datafooter(obj3);
            this.listarfooter();
+         } else if(parseInt(key1)===4){
+          var obj4 = data[key1];
+          this.datapag(obj4);
+          this.listarpag(this.pag);
          }
        });
      }
 
     );
   }
+
+  datapag(data){
+    Object.keys(data).forEach(key1 =>{
+    var obj1 = data[key1];
+    this.pag.id = obj1['id'];
+    this.pag.color = obj1['color'];
+    this.pag.footer= obj1['footer'];
+    })
+  }
+
 
   datapagina(data){
     Object.keys(data).forEach(key1 =>{
@@ -99,8 +116,7 @@ export class PanelComponent implements OnInit {
     })
   }
 
-  datafooter(data){
-      
+  datafooter(data){    
       Object.keys(data).forEach(key1 =>{
         var obj1 = data[key1];
       let foote = Object.assign({}, this.foot);
@@ -148,6 +164,15 @@ listarfooter(){
       this.asignardescripcionfooter(this.foot);
     }
 
+listarpag(pagina : Pagina){
+  var element = document.getElementById("colorFondo");
+  element.style.cssText =  `
+  background-color : `+pagina.color+` ;
+  `;
+} 
+
+
+    
 asignardescripcionfooter(footerPagina : Footer){
     var element = document.getElementById("descripcionfooter");
     element.style.cssText =
