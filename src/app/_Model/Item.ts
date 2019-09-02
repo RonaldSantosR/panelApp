@@ -13,4 +13,5 @@ export class Item{
     public color:string;
     public link_ruta:string;
     public tipoItem : TipoItem;
+    public activo: boolean;
 }

@@ -1,48 +1,46 @@
-<div class="row">
-</div>
-
-<div class="container pb-2 mt-4 ">
-  <br>
-  <div class="row justify-content-center">
-    <label id="texto1"></label>
-  </div>
-  <div class="row justify-content-center">
-    <strong>
-      <label id="texto2"></label>
-    </strong>
-  </div>
-</div>
-
-<br>
-
-<div class="row ove">
-  <div class="container">
-    <owl-carousel [options]="carouselOptions"  class="row justify-content-center" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-      <div class="" *ngFor="let item of items">
-      <div class="contenedorimagen mx-4">
-          <a href="{{item.link_ruta}}" class="info container d-flex h-100" target="_blank">
-              <img class="slide-image align-self-center" [src]="item.ruta_imagen"> </a>
-      </div>
-        <div class="slide-text">
-          <p class="m-2">{{item.descripcion}}</p>
-        </div>
-      </div>
-    </owl-carousel>
-  </div>
-</div>
-
-  
-<footer class="footer" role="contentinfo">
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 footer-info">
-          <label id="descripcion"></label>
-        </div>
-        <div class="col-lg-4 footer-logo">
-          <img class="footer-image" [src]="foot.logo" >
-        </div>
-      </div>
+<div class="container-fluid">
+  <div class="container pb-2 mt-4 ">
+    <br>
+    <div class="row justify-content-center">
+      <label id="texto1"></label>
+    </div>
+    <div class="row justify-content-center">
+      <strong>
+        <label id="texto2"></label>
+      </strong>
     </div>
   </div>
+
+  <br>
+
+  <div class="row ove">
+    <div class="container">
+      <owl-carousel [options]="carouselOptions"  class="row justify-content-center" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <div class="" *ngFor="let item of items">
+        <div class="contenedorimagen mx-4">
+            <a href="{{item.link_ruta}}" class="info container d-flex h-100" target="_blank">
+                <img class="slide-image align-self-center" [src]="item.ruta_imagen"> </a>
+        </div>
+          <div class="slide-text">
+            <p class="m-2">{{item.descripcion}}</p>
+          </div>
+        </div>
+      </owl-carousel>  
+      </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class="footer container-fluid" id="footer">
+  <div class="row h-100">
+    <div class="offset-1 col-2 h-100">
+       <a href="http://www.exact.com.pe/" target="_blank"> <img [src]="foot.logo" class="h-50 mt-3"> </a>     
+    </div>
+    <div class="offset-sm-3 offset-xl-5  col">
+      <span class="mt-4 d-block descripcion" id="descripcionfooter"></span>
+    </div>
+  </div>  
 </footer>

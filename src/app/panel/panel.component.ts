@@ -158,8 +158,10 @@ listartitulos(){
     )} 
 
 listarfooter(){
-      (document.getElementById("descripcion")).textContent = this.foot.descripcion;
-      this.asignarcolorfooter(this.foot);
+    
+      this.asignarestilofooter(this.foot);
+      (document.getElementById("descripcionfooter")).textContent = this.foot.descripcion;
+      this.asignardescripcionfooter(this.foot);
     }
 
 listarpag(pagina : Pagina){
@@ -169,23 +171,28 @@ listarpag(pagina : Pagina){
   `;
 } 
 
-asignarcolorfooter(footerPagina : Footer){
-    var element = document.getElementById("descripcion");
+
+    
+asignardescripcionfooter(footerPagina : Footer){
+    var element = document.getElementById("descripcionfooter");
     element.style.cssText =
     `
     color: `+footerPagina.colorDescripcion+`;
-    background-color : `+footerPagina.color+`;
-    position: fixed;
-    left: 0;
-    right:0;
+    `; 
+  } 
+  
+asignarestilofooter(footerPagina : Footer){
+  var element = document.getElementById("footer")
+  element.style.cssText = 
+  `
+    background: `+footerPagina.color+`;
+    height:80px;
+    position: absolute;
     bottom: 0;
-    width: 100%;
-    text-align: right;
-    height:65px;
-    margin:auto;
-    padding: 20px 100px 0px 17px;
+    left: 0;
+    right: 0;
     `;
-  }  
+}  
 
  Asignarcolortitulo1(primertitulo : Titulo) {
     var element = document.getElementById("texto1");
