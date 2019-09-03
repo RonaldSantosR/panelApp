@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
                   if (params.token !== undefined) {
                     this.browserStorageService.set("token", params.token);
                     this.browserStorageService.set("refreshtoken", params.rt);
+                    window.location.href='/sistemas';
                   }
                  this.paginaService.llenarPaginaPrincipal();
                 }
