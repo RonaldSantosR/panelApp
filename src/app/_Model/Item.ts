@@ -10,7 +10,6 @@ export class Item{
     public descripcion:string;
     public ruta_imagen:SafeResourceUrl;
     public orden:number;
-    public color:string;
     public link_ruta:string;
     public tipoItem : TipoItem;
     public activo: boolean;

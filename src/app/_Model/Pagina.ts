@@ -8,6 +8,7 @@ export class Pagina{
     
     public id: number;
     public color: string;
+    public descripcioncolor: string;
     public footer: Footer;
 
 }
