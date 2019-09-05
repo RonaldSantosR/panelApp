@@ -7,6 +7,7 @@ import { Item } from '../_Model/Item';
 import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/platform-browser';
 import { Footer } from '../_Model/Footer';
 import { Pagina } from '../_Model/Pagina';
+import * as $ from '../../../node_modules/jquery/dist/jQuery';
 
 @Component({
   selector: 'app-panel',
@@ -15,6 +16,8 @@ import { Pagina } from '../_Model/Pagina';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
+
+  
 
   constructor(
       public tituloService : TituloServiceService,
@@ -42,7 +45,7 @@ export class PanelComponent implements OnInit {
     ngOnInit() {
     this.llenarPaginaPrincipal()
 /*     this.ordenarimagenes(); */
-  }
+}
 
 
   llenarPaginaPrincipal(){
@@ -82,6 +85,10 @@ export class PanelComponent implements OnInit {
     })
   }
 
+  
+
+  
+
 
   datapagina(data){
     Object.keys(data).forEach(key1 =>{
@@ -97,6 +104,7 @@ export class PanelComponent implements OnInit {
       ite.color = obj1['color'];
       ite.link_ruta = obj1['link_ruta'];
       ite.tipoItem = obj1['tipoItem'];
+      ite.video = obj1['video'];
       this.items.push(ite);
     })    
   }

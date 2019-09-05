@@ -27,14 +27,18 @@
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./node_modules/owl.carousel/dist/assets/owl.carousel.css",
               "./node_modules/owl.carousel/dist/assets/owl.theme.default.css",
-              "./node_modules/font-awesome/css/font-awesome.css"
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/ngx-lightbox/lightbox.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.css"
 
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
+              "src/app.js",
               "./node_modules/popper.js/dist/umd/popper.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/owl.carousel/dist/owl.carousel.js"
+              "./node_modules/owl.carousel/dist/owl.carousel.js",
+              "./node_modules/@fortawesome/fontawesome-free/js/all.js"
             ],
             "es5BrowserSupport": true
           },
