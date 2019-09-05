@@ -16,22 +16,19 @@
   <div class="row ove">
     <div class="container">
       <owl-carousel [options]="carouselOptions"  class="row justify-content-center" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="" *ngFor="let imagen of imagenes">
+        <div  *ngFor="let imagen of imagenes;let i = index">
         <div class="contenedorimagen mx-4">
             <a href="{{imagen.link_ruta}}" class="info container d-flex h-100" target="_blank">
                 <img class="slide-image align-self-center" [src]="imagen.ruta_imagen"> </a>
         </div>
           <div class="slide-text">
-            <p class="m-4">{{imagen.descripcion}}</p>
+            <p [attr.id]="'wave' + i">{{imagen.descripcion}}</p>
           </div>
         </div>
       </owl-carousel>  
       </div>
     </div>
 </div>
-
-
-
 
 
 <footer class="footer container-fluid" id="footer">
