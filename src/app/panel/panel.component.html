@@ -24,12 +24,35 @@
           <div class="slide-text">
             <p [attr.id]="'wave' + i">{{imagen.descripcion}}</p>
           </div>
+          <i class="fa fa-play-circle text-primary" data-toggle="modal" [attr.data-whatever]="imagen.video" data-target="#exampleModal"></i>
         </div>
       </owl-carousel>  
       </div>
     </div>
 </div>
 
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" >
+      <div class="modal-content">
+          <iframe src="https://www.youtube.com/embed/8MSP_lyRHjM" height="480"
+    frameborder="0"
+    allow="accelerometer; autoplay; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+  </iframe>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <iframe height="400" id="video" 
+            frameborder="0" allow="accelerometer; autoplay; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
 
 <footer class="footer container-fluid" id="footer">
   <div class="row h-100">

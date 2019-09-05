@@ -13,4 +13,5 @@ export class Item{
     public link_ruta:string;
     public tipoItem : TipoItem;
     public activo: boolean;
+    public video: string;
 }
