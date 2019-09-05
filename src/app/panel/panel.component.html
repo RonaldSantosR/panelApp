@@ -16,13 +16,13 @@
   <div class="row ove">
     <div class="container">
       <owl-carousel [options]="carouselOptions"  class="row justify-content-center" [items]="items" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="" *ngFor="let imagen of imagenes">
+        <div  *ngFor="let imagen of imagenes;let i = index">
         <div class="contenedorimagen mx-4">
             <a href="{{imagen.link_ruta}}" class="info container d-flex h-100" target="_blank">
                 <img class="slide-image align-self-center" [src]="imagen.ruta_imagen"> </a>
         </div>
           <div class="slide-text">
-            <p class="m-4">{{imagen.descripcion}}</p>
+            <p [attr.id]="'wave' + i">{{imagen.descripcion}}</p>
           </div>
           <i class="fa fa-play-circle text-primary" data-toggle="modal" [attr.data-whatever]="imagen.video" data-target="#exampleModal"></i>
         </div>
@@ -46,7 +46,7 @@
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <iframe height="480" id="video" 
+            <iframe height="400" id="video" 
             frameborder="0" allow="accelerometer; autoplay; 
             encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           </iframe>

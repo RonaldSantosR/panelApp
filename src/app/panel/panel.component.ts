@@ -44,6 +44,7 @@ export class PanelComponent implements OnInit {
   
     ngOnInit() {
     this.llenarPaginaPrincipal()
+
 /*     this.ordenarimagenes(); */
 }
 
@@ -57,15 +58,15 @@ export class PanelComponent implements OnInit {
           this.datatitulo(obj1);
           this.listartitulos();
            //this.tituloService.listarTitulos(obj1);
-         } else if(parseInt(key1)===2){
+         } else if(parseInt(key1)===3){
           var obj2 = data[key1];
           this.datapagina(obj2);
           this.listaritems();
-         }else if (parseInt(key1)===3){
+         }else if (parseInt(key1)===4){
            var obj3 = data[key1];
            this.datafooter(obj3);
            this.listarfooter();
-         } else if(parseInt(key1)===4){
+         } else if(parseInt(key1)===2){
           var obj4 = data[key1];
           this.datapag(obj4);
           this.listarpag(this.pag);
@@ -74,6 +75,7 @@ export class PanelComponent implements OnInit {
      }
 
     );
+
   }
 
   datapag(data){
@@ -82,6 +84,7 @@ export class PanelComponent implements OnInit {
     this.pag.id = obj1['id'];
     this.pag.color = obj1['color'];
     this.pag.footer= obj1['footer'];
+    this.pag.descripcioncolor=obj1['descripcioncolor'];
     })
   }
 
@@ -101,7 +104,6 @@ export class PanelComponent implements OnInit {
       ite.ruta_imagen = this.sanitization.bypassSecurityTrustUrl(
         'data:image/png;base64,' + obj1['ruta_imagen']);
       ite.orden = parseInt(obj1['orden']);
-      ite.color = obj1['color'];
       ite.link_ruta = obj1['link_ruta'];
       ite.tipoItem = obj1['tipoItem'];
       ite.video = obj1['video'];
@@ -152,7 +154,30 @@ listaritems(){
       this.imagenes.sort(function(a, b) {
         return a.orden - b.orden;
       });
+
+      setTimeout(()=>{
+        this.descripcioncss(this.pag);
+      }, 500);
+
+      
   }
+
+
+descripcioncss(pagina : Pagina){
+/*   var element = document.getElementById('wave0');
+  element.style.cssText =
+  `
+  color: `+pagina.descripcioncolor+`;
+  `;  */
+ var y = document.getElementsByTagName("p");
+ var i;
+ for (i = 0; i < this.imagenes.length; i++) {
+  y[i].style.color = pagina.descripcioncolor;
+ }  
+
+}
+
+
 
 listartitulos(){
     this.titulos.forEach(
@@ -170,7 +195,6 @@ listartitulos(){
     )} 
 
 listarfooter(){
-    
       this.asignarestilofooter(this.foot);
       (document.getElementById("descripcionfooter")).textContent = this.foot.descripcion;
       this.asignardescripcionfooter(this.foot);
@@ -263,16 +287,5 @@ asignarestilofooter(footerPagina : Footer){
       }
     }
   }
- 
-
-
-/*   ordenarimagenes(){
-    this.imagenes.sort(function(a, b) {
-      return a.orden - b.orden;
-    });
-  } */
-
-
-
   
 }
