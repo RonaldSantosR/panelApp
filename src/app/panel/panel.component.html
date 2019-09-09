@@ -2,11 +2,11 @@
   <div class="container pb-2 mt-4 ">
     <br>
     <div class="row justify-content-center">
-      <label id="texto1"></label>
+      <label id="texto1" class="sa"></label>
     </div>
     <div class="row justify-content-center">
       <strong>
-        <label id="texto2"></label>
+        <label id="texto2" class="sa2"></label>
       </strong>
     </div>
   </div>
@@ -24,12 +24,13 @@
           <div class="slide-text">
             <p [attr.id]="'wave' + i">{{imagen.descripcion}}</p>
           </div>
-          <i class="fa fa-play-circle text-primary" data-toggle="modal" [attr.data-whatever]="imagen.video" data-target="#exampleModal"></i>
+          <i class="fa fa-play-circle text-primary ml-4" data-toggle="modal" [attr.data-whatever]="imagen.video" data-target="#exampleModal"></i>
         </div>
       </owl-carousel>  
       </div>
     </div>
-</div>
+  </div>
+
 
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document" >
@@ -54,10 +55,12 @@
       </div>
     </div>
 
-<footer class="footer container-fluid" id="footer">
+<footer class="footer container-fluid tamañofooter" id="footer">
   <div class="row h-100">
-    <div class="offset-1 col-2 h-100">
-       <a href="http://www.exact.com.pe/" target="_blank"> <img [src]="foot.logo" class="h-50 mt-3"> </a>     
+    <div class="offset-1 col-2" id="divfooter" >
+       <a href="http://www.exact.com.pe/" target="_blank">
+        <img [src]="foot.logo" class="mt-3" id="imagenfooter"> 
+      </a>     
     </div>
     <div class="offset-sm-3 offset-xl-5  col">
       <span class="mt-4 d-block descripcion" id="descripcionfooter"></span>

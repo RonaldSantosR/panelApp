@@ -222,11 +222,11 @@ asignarestilofooter(footerPagina : Footer){
   element.style.cssText = 
   `
     background: `+footerPagina.color+`;
-    height:80px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
+    clear: both;
     `;
 }  
 
@@ -234,26 +234,30 @@ asignarestilofooter(footerPagina : Footer){
     var element = document.getElementById("texto1");
     element.style.cssText=
     `
-    font-size: 50px;  
+     
     background: -webkit-linear-gradient(left top, ` + primertitulo.colorAlto + ` , ` + primertitulo.colorMedio + `,  ` + primertitulo.colorBajo + `,` + primertitulo.opacidad + `);
     background: linear-gradient(to bottom right,  ` + primertitulo.colorAlto + ` , ` + primertitulo.colorMedio + `,  ` + primertitulo.colorBajo + `,` + primertitulo.opacidad + `);
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent; 
     margin: 0px;
     line-height:1;
+    display: block;
+    text-align: center;
     `;
   }
   Asignarcolortitulo2(segundotitulo : Titulo) {
     var element = document.getElementById("texto2");
     element.style.cssText=
     `
-    font-size: 82px;  
+      
     margin: 0px;
     background: -webkit-linear-gradient(left top,  ` + segundotitulo.colorAlto + ` , ` + segundotitulo.colorMedio + `,  ` + segundotitulo.colorBajo + `,` + segundotitulo.opacidad + `);
     background: linear-gradient(to bottom right, ` + segundotitulo.colorAlto + ` , ` + segundotitulo.colorMedio + `,  ` + segundotitulo.colorBajo + `,` + segundotitulo.opacidad + `);
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;  
     line-height:1;
+    display: block;
+    text-align: center;
     `;
   }
 

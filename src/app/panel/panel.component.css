@@ -24,6 +24,57 @@ body {
   overflow: hidden;
 }
 
+.sa{
+  font-size: 50px; 
+}
+.sa2{
+  font-size: 82px;
+}
+
+@media (max-width: 600px) { 
+  .sa {
+    font-size: 6.2vw;  
+  }
+  
+}
+
+.tamañofooter{
+  height:70px;
+}
+
+
+@media (max-width: 700px) { 
+  .sa2{
+    font-size: 9.2vw;  
+  }
+
+}
+
+#divfooter{
+  height: 100%
+} 
+
+#imagenfooter{
+  height: 50%;
+} 
+
+@media (max-width: 500px) { 
+  #imagenfooter{
+    height: 40%;  
+  }
+  .tamañofooter{
+    height:50px;
+  }
+
+}
+
+
+
+
+
+
+
+
 /* h2 {  
 
     font-size: 82px;  
