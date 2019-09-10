@@ -11,13 +11,15 @@ import { BrowserStorageService } from './_Service/browserstorage.service';
 import { AuthInterceptor } from './_Service/auth-interceptor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { OwlModule } from '../../node_modules/ngx-owl-carousel';
+import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopanel.module';
+import { UiSwitchModule } from 'ngx-toggle-switch';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent  
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,9 @@ import { OwlModule } from '../../node_modules/ngx-owl-carousel';
     PanelModule,
     HttpClientModule,
     AngularFontAwesomeModule,
-    OwlModule
+    MantenimientopanelModule,
+    OwlModule,
+    UiSwitchModule
   ],
   providers: [TituloServiceService,
               RequesterService,

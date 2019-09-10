@@ -1,0 +1,39 @@
+<div class="container pb-2 mt-4 ">
+  <br>
+  <div class="row justify-content-center">
+    <label id="texto1" class="sa">MANTENIMIENTO DE SOLUCIONES</label>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="tab">
+        <div class="col">
+          <table class="table tabla">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="tama" >Sistemas</th>
+                <th scope="col" class="tama">Editar</th>
+                <th scope="col" class="tama">Activar / Desactivar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td scope="col" class="tama">
+                  <img class="slide-image align-self-center imag" [src]="item.ruta_imagen">
+                </td>
+                <td scope="col" class="tama">
+                  <i class="fa fa-edit"></i>
+                </td>
+                <td scope="col" class="tama" >
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1"></label>
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</div>
+
