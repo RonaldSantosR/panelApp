@@ -40,7 +40,7 @@ export class PanelComponent implements OnInit {
   user_photo: SafeResourceUrl;
   foot : Footer = new Footer();
   pag : Pagina = new Pagina();
-
+  mantenimiento: boolean;
   
     ngOnInit() {
     this.llenarPaginaPrincipal()
@@ -66,10 +66,22 @@ export class PanelComponent implements OnInit {
            var obj3 = data[key1];
            this.datafooter(obj3);
            this.listarfooter();
-         } else if(parseInt(key1)===2){
+         }else if(parseInt(key1)===2){
           var obj4 = data[key1];
           this.datapag(obj4);
           this.listarpag(this.pag);
+         }
+         else if(parseInt(key1)===2){
+          var obj4 = data[key1];
+          this.datapag(obj4);
+          this.listarpag(this.pag);
+         }else if(parseInt(key1)===5){
+          var obj4 = data[key1];
+          if(obj4=="MANTENIMIENTO"){
+            this.mantenimiento=true;
+          }else{
+            this.mantenimiento=false
+          }
          }
        });
      }
