@@ -12,7 +12,6 @@ import { AuthInterceptor } from './_Service/auth-interceptor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { OwlModule } from '../../node_modules/ngx-owl-carousel';
 import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopanel.module';
-import { UiSwitchModule } from 'ngx-toggle-switch';
 
 
 
@@ -28,8 +27,8 @@ import { UiSwitchModule } from 'ngx-toggle-switch';
     HttpClientModule,
     AngularFontAwesomeModule,
     MantenimientopanelModule,
-    OwlModule,
-    UiSwitchModule
+    OwlModule
+    
   ],
   providers: [TituloServiceService,
               RequesterService,

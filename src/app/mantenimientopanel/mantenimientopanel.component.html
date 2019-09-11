@@ -1,8 +1,8 @@
 <div class="container pb-2 mt-4 ">
   <br>
-  <div class="row justify-content-center">
+  <!-- <div class="row justify-content-center">
     <label id="texto1" class="sa">MANTENIMIENTO DE SOLUCIONES</label>
-  </div>
+  </div> -->
 </div>
 <br>
 <br>
@@ -37,9 +37,9 @@
                     <i class="fa fa-edit"></i>
                   </td>
                   <td scope="col" class="tama" >
-                      <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1"></label>
+                      <div class="toogle align-self-center">
+                        <input type="checkbox" id="switch{{item.id}}" ng-model="item.activo"/>
+                        <label for="switch{{item.id}}" id="change" ></label>
                       </div>
                   </td>
                 </tr>
