@@ -26,7 +26,7 @@ export class ItemService {
   }
 
   listarItems() : Observable<Item[]> {
-    return this.requester.get<Item[]>(this.REQUEST_URL,{});
+    return this.requester.get<Item[]>(this.REQUEST_URL+"activos",{});
   }
 
 }
