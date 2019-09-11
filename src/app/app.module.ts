@@ -16,6 +16,7 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent  
@@ -28,7 +29,7 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
     AngularFontAwesomeModule,
     MantenimientopanelModule,
     OwlModule
-    
+
   ],
   providers: [TituloServiceService,
               RequesterService,
