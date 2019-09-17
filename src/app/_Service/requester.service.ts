@@ -30,4 +30,10 @@ export class RequesterService{
         );
     }
 
+
+    put<T>(url: string, body: any, options: {}): Observable<T> {
+        return this.httpClient.put<T>(url, body, options);
+    }
+
+
 }

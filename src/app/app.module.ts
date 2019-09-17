@@ -12,6 +12,12 @@ import { AuthInterceptor } from './_Service/auth-interceptor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { OwlModule } from '../../node_modules/ngx-owl-carousel';
 import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopanel.module';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { ModificarItemComponent } from './mantenimientopanel/modificar-item/modificar-item.component';
+import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
+import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component';
+import { UtilsServiceService } from './_Service/utils-service.service';
 
 
 
@@ -19,7 +25,9 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
 
 @NgModule({
   declarations: [
-    AppComponent  
+    AppComponent,
+    ModificarItemComponent,
+    ConfirmModalComponent  
   ],
   imports: [
     BrowserModule,
@@ -28,13 +36,23 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
     HttpClientModule,
     AngularFontAwesomeModule,
     MantenimientopanelModule,
-    OwlModule
-
+    ModalModule.forRoot(),
+    OwlModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+  entryComponents:[
+    ModificarItemComponent,
+    ConfirmModalComponent
+  ],
+
   providers: [TituloServiceService,
               RequesterService,
               ItemService,
               BrowserStorageService,
+              BsModalRef,
+              BsModalService,
+              UtilsServiceService,
               {
                 provide: HTTP_INTERCEPTORS,
                 useClass: AuthInterceptor,

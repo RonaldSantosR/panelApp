@@ -29,4 +29,12 @@ export class ItemService {
     return this.requester.get<Item[]>(this.REQUEST_URL+"activos",{});
   }
 
+  modificarItem(item: Item) : Observable<Item>{
+    return this.requester.put<Item>(this.REQUEST_URL+"modificar",item, {});
+  }
+
+  listarOrdenes() : Observable< Number[] >{
+    return this.requester.get<Number[]>(this.REQUEST_URL+"ordenitems",{});
+  }
+
 }

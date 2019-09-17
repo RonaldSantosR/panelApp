@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
+    "ngx-bootstrap": "^5.1.2",
     "ngx-lightbox": "^2.1.0",
     "ngx-localstorage": "^2.4.0",
     "ngx-owl-carousel": "^2.0.7",

@@ -1,22 +1,21 @@
 <div class="container pb-2 mt-4 ">
   <br>
 
-  <!-- <div class="row justify-content-center">
-    <label id="texto1" class="sa">MANTENIMIENTO DE SOLUCIONES</label>
-  </div> -->
+  <div class="row justify-content-center">
+    <h1 id="texto1" class="sa">MANTENIMIENTO DE SOLUCIONES</h1>
+  </div>
 
 </div>
+
 <br>
 <br>
 
 
 <div class="general">
   <div class="row">
-    <div class="col-10 btn-group">
-      <div class="mb-2" style="text-align:right">
+      <div class="mb-2"  style="text-align: right;width:100%;margin-right: 130px; ">
         <button type="button" class="btn btn-success" (click)="onAgregar()">Agregar</button>
       </div>
-    </div>
   </div>
   
   
@@ -25,25 +24,27 @@
             <table class="table tabla">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="tama" >Sistemas</th>
-                  <th scope="col" class="tama">Editar</th>
-                  <th scope="col" class="tama">Activar / Desactivar</th>
+                  <th scope="col" class="tama"> Sistemas </th>
+                  <th scope="col" class="tama"> Editar </th>
+                  <th scope="col" class="tama"> Activar / Desactivar</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of items">
-                  <td scope="col" class="tama">
+                  <td scope="col" class="tama" >
                     <img class="slide-image align-self-center imag" [src]="item.ruta_imagen">
                   </td>
-                  <td scope="col" class="tama">
-                    <i class="fa fa-edit"></i>
+                  <td scope="col" class="align-self-center tama2">
+                      <div class="toosgle">
+                          <button class="buttons" (click)="modificarProducto(item.id)"><i class="fa fa-edit" style="color:#496D7B; width:50; height:50;"></i></button>
+                      </div>
                   </td>
-                  <td scope="col" class="tama" >
-
-                      <div class="toogle align-self-center">
-                        <input type="checkbox" id="switch{{item.id}}" ng-model="item.activo"/>
-                        <label for="switch{{item.id}}" id="change" ></label>
-
+                  <td scope="col" class="tama">
+                      <div class="toosgle ">
+                        <div class="subtoggle align-self-center">
+                            <input type="checkbox" id="switch{{item.id}}" ng-model="item.activo"/>
+                            <label for="switch{{item.id}}" id="change" ></label>
+                        </div>
                       </div>
                   </td>
                 </tr>
