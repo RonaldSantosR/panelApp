@@ -21,11 +21,9 @@
 .imag{
     width: 150px;
     height: 60px;
+    margin-top: 15px;
 }
 
-.leftt{
-
-}
 
 input[type=checkbox]{
     height: 0;
@@ -57,7 +55,7 @@ label:after{
 }
 
 input:checked+label {
-    background: blue;
+    background: #0B87B5;
   }
   
   input:checked+label:after {
@@ -65,12 +63,27 @@ input:checked+label {
     transform: translateX(-100%);
   }
   
-  label:active:after {
+/*   label:active:after {
     width: 130px;
   }
-
-  .toogle{
+ */
+  .toosgle{
       height: 100%;
       width: 100%;
+    text-align: center;
   }
 
+  .subtoggle{
+    display:inline-block;
+    padding-bottom: 25px;
+
+  }
+
+  .tama2{
+      padding-top: 30px;
+  }
+
+  .buttons {
+    background-color: Transparent;
+
+  }
