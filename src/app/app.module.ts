@@ -17,13 +17,22 @@ import {BsModalRef} from 'ngx-bootstrap/modal';
 import { NotifierModule } from 'angular-notifier';
 import {AgregarItemComponent} from './mantenimientopanel/agregar-item/agregar-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModificarItemComponent } from './mantenimientopanel/modificar-item/modificar-item.component';
+import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component';
+import { UtilsServiceService } from './_Service/utils-service.service';
+
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarItemComponent 
+    AgregarItemComponent, 
+    ModificarItemComponent,
+    ConfirmModalComponent  
+
   ],
   imports: [
     BrowserModule,
@@ -39,10 +48,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
+  entryComponents:[
+    ModificarItemComponent,
+    ConfirmModalComponent,
+    AgregarItemComponent
+],
+
   providers: [TituloServiceService,
               RequesterService,
               ItemService,
               BrowserStorageService,
+              BsModalRef,
+              BsModalService,
+              UtilsServiceService,
               {
                 provide: HTTP_INTERCEPTORS,
                 useClass: AuthInterceptor,
@@ -52,8 +70,5 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
               BsModalService
             ],
   bootstrap: [AppComponent],
-  entryComponents:[
-    AgregarItemComponent
-  ]
 })
 export class AppModule { }

@@ -1,0 +1,100 @@
+<div class="card">
+
+<div class="modal-header">
+    <h4>Modificar Solucionario</h4>
+</div>
+
+<form [formGroup]="modificarForm" (ngSubmit)=onSubmit(modificarForm)>
+
+    <div class="card-body">
+
+        <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input class="form-control" type="text" name="nombre" id="nombre" formControlName="nombre">
+                <span *ngIf="!modificarForm.get('nombre').valid && modificarForm.get('nombre').touched"
+                  class="text-danger small">
+                  El nombre de la solución no puede estar vacío
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="link_ruta">Link ruta</label>
+                  <input class="form-control" type="text" name="link_ruta" id="link_ruta" formControlName="link_ruta">
+                  <span *ngIf="!modificarForm.get('link_ruta').valid && modificarForm.get('link_ruta').touched"
+                    class="text-danger small">
+                    El link de la ruta no puede estar vacío
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="video">Link video</label>
+                    <input class="form-control" type="text" name="video" id="video" formControlName="video">
+                    <span *ngIf="!modificarForm.get('video').valid && modificarForm.get('video').touched"
+                      class="text-danger small">
+                      El link del video no puede estar vacio
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="Orden">Orden</label>
+                    <select class="form-control" id="orden" formControlName="orden">
+                      <option *ngFor="let orden of ordenes" [ngValue]="orden">{{orden}}</option>
+                    </select>
+                    <span *ngIf="!modificarForm.get('orden').valid && modificarForm.get('orden').touched"
+                      class="text-danger small">
+                      Es necesario la elección de una región
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="ruta_imagen">Icono</label>
+                      <input type="file" class="form-control-file"
+                      accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="ruta_imagen">                      
+                      <span *ngIf="!modificarForm.get('ruta_imagen').valid && modificarForm.get('ruta_imagen').touched"
+                        class="text-danger small">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="form-row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="descripcion">Descripción</label>
+                      <textarea name="descripcion" id="descripcion" class="form-control" formControlName="descripcion" rows="5" cols="60"></textarea>
+                      <span *ngIf="!modificarForm.get('descripcion').valid && modificarForm.get('descripcion').touched"
+                        class="text-danger small">
+                          La descripción no puede estar vacío
+                      </span>
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-success" [disabled]="!modificarForm.valid">Modificar</button>
+      <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">Cancelar</button>
+    </div>
+
+</form>
+
+</div>
