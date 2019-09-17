@@ -12,14 +12,18 @@ import { AuthInterceptor } from './_Service/auth-interceptor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { OwlModule } from '../../node_modules/ngx-owl-carousel';
 import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopanel.module';
-
-
+import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
+import {BsModalRef} from 'ngx-bootstrap/modal';
+import { NotifierModule } from 'angular-notifier';
+import {AgregarItemComponent} from './mantenimientopanel/agregar-item/agregar-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent  
+    AppComponent,
+    AgregarItemComponent 
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,11 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
     HttpClientModule,
     AngularFontAwesomeModule,
     MantenimientopanelModule,
-    OwlModule
+    OwlModule,
+    ModalModule.forRoot(),
+    NotifierModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [TituloServiceService,
@@ -40,7 +48,12 @@ import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopane
                 useClass: AuthInterceptor,
                 multi: true
               },
+              BsModalRef,
+              BsModalService
             ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    AgregarItemComponent
+  ]
 })
 export class AppModule { }

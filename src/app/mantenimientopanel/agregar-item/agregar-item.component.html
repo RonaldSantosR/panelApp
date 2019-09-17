@@ -1,0 +1,86 @@
+<div class="card">
+
+  <div class="modal-header">
+    <h4>Agregar Sistema</h4>
+  </div>
+
+  <form [formGroup]="agregarForm" (ngSubmit)=onSubmit(agregarForm.value)>
+
+    <div class="card-body">
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" name="nombre" id="nombre" formControlName="nombre">
+            <span *ngIf="!agregarForm.get('nombre').valid && agregarForm.get('nombre').touched"
+              class="text-danger small">
+              Es necesario ingresar el nombre del feriado
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="linkRuta">Ruta Sistema</label>
+            <input class="form-control" type="text" name="linkRuta" id="linkRuta" formControlName="linkRuta">
+            <span *ngIf="!agregarForm.get('linkRuta').valid && agregarForm.get('linkRuta').touched" class="text-danger small">
+              Es necesario ingresar la fecha del feriado
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="linkVideo">Ruta Video</label>
+            <input class="form-control" type="text" name="linkVideo" id="linkVideo" formControlName="linkVideo">
+            <span *ngIf="!agregarForm.get('linkVideo').valid && agregarForm.get('linkVideo').touched"
+              class="text-danger small">
+              Es necesario ingresar el nombre del feriado
+            </span>
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="icono">Icono</label>
+            <input type="file" class="form-control-file" id="icono" formControlName="icono"
+              (change)="onChangeFile($event.srcElement.files[0])" accept=".PNG">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <input class="form-control" type="text" name="descripcion" id="descripcion" formControlName="descripcion">
+            <span *ngIf="!agregarForm.get('descripcion').valid && agregarForm.get('descripcion').touched"
+              class="text-danger small">
+              Es necesario ingresar el nombre del feriado
+            </span>
+          </div>
+        </div>
+      </div>
+      
+
+     
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-success" [disabled]="!agregarForm.valid">Agregar</button>
+      <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">Cancelar</button>
+    </div>
+
+  </form>
+
+</div>
