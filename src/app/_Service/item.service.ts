@@ -29,6 +29,15 @@ export class ItemService {
     return this.requester.get<Item[]>(this.REQUEST_URL+"activos",{});
   }
 
+  agregarItem(item : Item, file: File) : Observable<Item> {
+    let form: FormData = new FormData;
+        form.append("item", JSON.stringify(item));
+        if (file !== null && file != undefined) {
+            form.append("file", file);
+        }
+    return this.requester.post<Item>(this.REQUEST_URL,form,{});
+
+      }
   modificarItem(item: Item) : Observable<Item>{
     return this.requester.put<Item>(this.REQUEST_URL+"modificar",item, {});
   }

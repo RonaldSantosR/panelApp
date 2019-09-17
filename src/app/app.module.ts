@@ -12,12 +12,15 @@ import { AuthInterceptor } from './_Service/auth-interceptor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { OwlModule } from '../../node_modules/ngx-owl-carousel';
 import { MantenimientopanelModule } from './mantenimientopanel/mantenimientopanel.module';
-import { BsModalRef } from 'ngx-bootstrap/modal';
-import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import {BsModalService, ModalModule} from 'ngx-bootstrap/modal';
+import {BsModalRef} from 'ngx-bootstrap/modal';
+import { NotifierModule } from 'angular-notifier';
+import {AgregarItemComponent} from './mantenimientopanel/agregar-item/agregar-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModificarItemComponent } from './mantenimientopanel/modificar-item/modificar-item.component';
-import { ReactiveFormsModule, FormsModule } from '../../node_modules/@angular/forms';
 import { ConfirmModalComponent } from './modals/confirm-modal/confirm-modal.component';
 import { UtilsServiceService } from './_Service/utils-service.service';
+
 
 
 
@@ -26,8 +29,10 @@ import { UtilsServiceService } from './_Service/utils-service.service';
 @NgModule({
   declarations: [
     AppComponent,
+    AgregarItemComponent, 
     ModificarItemComponent,
     ConfirmModalComponent  
+
   ],
   imports: [
     BrowserModule,
@@ -36,15 +41,18 @@ import { UtilsServiceService } from './_Service/utils-service.service';
     HttpClientModule,
     AngularFontAwesomeModule,
     MantenimientopanelModule,
-    ModalModule.forRoot(),
     OwlModule,
+    ModalModule.forRoot(),
+    NotifierModule,
     FormsModule,
     ReactiveFormsModule
+
   ],
   entryComponents:[
     ModificarItemComponent,
-    ConfirmModalComponent
-  ],
+    ConfirmModalComponent,
+    AgregarItemComponent
+],
 
   providers: [TituloServiceService,
               RequesterService,
@@ -58,7 +66,9 @@ import { UtilsServiceService } from './_Service/utils-service.service';
                 useClass: AuthInterceptor,
                 multi: true
               },
+              BsModalRef,
+              BsModalService
             ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -5,9 +5,11 @@ import { Item } from '../_Model/Item';
 import { asTextData } from '../../../node_modules/@angular/core/src/view';
 import { sanitizeIdentifier } from '../../../node_modules/@angular/compiler';
 import { TipoItem } from '../_Model/TipoItem';
-import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/platform-browser';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { DomSanitizer , SafeResourceUrl} from '../../../node_modules/@angular/platform-browser';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { AgregarItemComponent } from './agregar-item/agregar-item.component';
 import { ModificarItemComponent } from './modificar-item/modificar-item.component';
+
 
 @Component({
   selector: 'app-mantenimientopanel',
@@ -17,9 +19,9 @@ import { ModificarItemComponent } from './modificar-item/modificar-item.componen
 export class MantenimientopanelComponent implements OnInit {
 
   constructor(
+    public itemService : ItemService,
+    public sanitization : DomSanitizer,
     private modalService: BsModalService,
-    public itemService: ItemService,
-    public sanitization: DomSanitizer
 
   ) { }
 
@@ -72,6 +74,26 @@ export class MantenimientopanelComponent implements OnInit {
 /*     bsModalRef.content.productoModificadoEvent.subscribe(() =>
       this.listaritems()
     )  */
+  }
+
+
+  onAgregar() {
+    this.agregarItemSistema();
+  }
+
+  agregarItemSistema() {
+    let bsModalRef: BsModalRef = this.modalService.show(AgregarItemComponent, {
+      initialState: {
+        titulo: 'Agregar sistema'
+      },
+      class: 'modal-md',
+      keyboard: false,
+      backdrop: "static"
+    });
+
+    bsModalRef.content.itemCreadoEvent.subscribe(() =>
+      this.agregarItemSistema()
+    )
   }
 
 }
