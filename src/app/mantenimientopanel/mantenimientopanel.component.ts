@@ -37,6 +37,7 @@ export class MantenimientopanelComponent implements OnInit {
 
 
   listaritems() {
+    this.items = [];
     this.itemService.listarItems().subscribe(
       item => {
         item.forEach(
@@ -71,9 +72,10 @@ export class MantenimientopanelComponent implements OnInit {
       keyboard: false,
       backdrop: "static"
     });
-/*     bsModalRef.content.productoModificadoEvent.subscribe(() =>
+     bsModalRef.content.ambitoModificadoEvent.subscribe(() =>
       this.listaritems()
-    )  */
+    ) 
+
   }
 
 

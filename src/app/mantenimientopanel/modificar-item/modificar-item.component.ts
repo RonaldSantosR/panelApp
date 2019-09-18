@@ -6,6 +6,7 @@ import { ConfirmModalComponent } from '../../modals/confirm-modal/confirm-modal.
 import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { ItemService } from '../../_Service/item.service';
 import { Subscription } from '../../../../node_modules/rxjs';
+import { NotifierService } from '../../../../node_modules/angular-notifier';
 
 @Component({
   selector: 'app-modificar-item',
@@ -18,8 +19,8 @@ export class ModificarItemComponent implements OnInit {
     private utilsService: UtilsServiceService,
     private modalService: BsModalService,
     private bsModalRef: BsModalRef,
-    private itemService : ItemService
-
+    private itemService : ItemService,
+    private notifier: NotifierService,
 
   ) {}
   @Output() ambitoModificadoEvent = new EventEmitter();
@@ -29,6 +30,8 @@ export class ModificarItemComponent implements OnInit {
   ordenes : Number[] = [];
   item : Item;
   modificarForm: FormGroup;
+  autorizationFile: File;
+
 
 
   ngOnInit() {
@@ -51,18 +54,25 @@ export class ModificarItemComponent implements OnInit {
    ) ; 
   }
 
+  onChangeFile(file: File) {
+    if (file == undefined || file == null) {
+      this.autorizationFile = null;
+      return;
+    }
+    this.autorizationFile = file;
+  }
 
   onSubmit(form: any) {
     if (!this.utilsService.isUndefinedOrNullOrEmpty(this.modificarForm.controls['nombre'].value)) {
       let item = Object.assign({}, this.item);
       let nombreSinEspacios = this.modificarForm.controls['nombre'].value.trim();
+      item.id = this.item.id;
       item.nombre = nombreSinEspacios;
       item.descripcion = this.modificarForm.get("descripcion").value;
       item.orden = this.modificarForm.get('orden').value;
-      item.ruta_imagen = this.modificarForm.get('ruta_imagen').value;
       item.video = this.modificarForm.get('video').value;
       item.link_ruta = this.modificarForm.get('link_ruta').value;
-
+      item.ruta_imagen = null;
 /*       
       let bsModalRef: BsModalRef = this.modalService.show(ConfirmModalComponent, {
         initialState: {
@@ -71,15 +81,15 @@ export class ModificarItemComponent implements OnInit {
       }); */
 
       //bsModalRef.content.confirmarEvent.subscribe(() => {
-        this.modificaritemSubscription = this.itemService.modificarItem(item).subscribe(
+        this.modificaritemSubscription = this.itemService.modificarItem(item, this.autorizationFile).subscribe(
           item => {
-/*             this.notifier.notify('success', 'Se ha modificado el ámbito correctamente');
- */            this.bsModalRef.hide();
-               this.ambitoModificadoEvent.emit(item);
+            this.notifier.notify('success', 'Se ha modificado el ámbito correctamente');
+            this.bsModalRef.hide();
+            this.ambitoModificadoEvent.emit(item);
           },
           error => {
-/*             this.notifier.notify('error', 'El nombre modificado ya existe');
- */          }
+            this.notifier.notify('error', 'El nombre modificado ya existe');
+          }
         );
 //      })
 
