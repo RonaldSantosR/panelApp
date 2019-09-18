@@ -8,6 +8,7 @@ import { DomSanitizer, SafeResourceUrl } from '../../../node_modules/@angular/pl
 import { Footer } from '../_Model/Footer';
 import { Pagina } from '../_Model/Pagina';
 import * as $ from '../../../node_modules/jquery/dist/jQuery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-panel',
@@ -22,7 +23,8 @@ export class PanelComponent implements OnInit {
   constructor(
       public tituloService : TituloServiceService,
       public paginaService : PaginaService,
-      public sanitization : DomSanitizer
+      public sanitization : DomSanitizer,
+      private router : Router
   ) { 
   }
   titulos : Titulo[] =[];
@@ -219,6 +221,9 @@ listarpag(pagina : Pagina){
   `;
 } 
 
+onEditar(){
+  this.router.navigate(['./mantenimiento']);
+}
 
     
 asignardescripcionfooter(footerPagina : Footer){
