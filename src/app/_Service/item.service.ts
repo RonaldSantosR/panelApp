@@ -36,10 +36,14 @@ export class ItemService {
             form.append("file", file);
         }
     return this.requester.post<Item>(this.REQUEST_URL,form,{});
-
       }
-  modificarItem(item: Item) : Observable<Item>{
-    return this.requester.put<Item>(this.REQUEST_URL+"modificar",item, {});
+  modificarItem(item: Item, file: File) : Observable<Item>{
+    let form: FormData = new FormData;
+        form.append("item", JSON.stringify(item));
+        if (file !== null && file != undefined) {
+            form.append("file", file);
+        }
+    return this.requester.put<Item>(this.REQUEST_URL+"modificar",form, {});
   }
 
   listarOrdenes() : Observable< Number[] >{

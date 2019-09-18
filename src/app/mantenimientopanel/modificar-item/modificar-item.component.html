@@ -64,17 +64,17 @@
 
 
               <div class="form-row">
-                  <div class="col">
-                    <div class="form-group">
-                      <label for="ruta_imagen">Icono</label>
-                      <input type="file" class="form-control-file"
-                      accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="ruta_imagen">                      
-                      <span *ngIf="!modificarForm.get('ruta_imagen').valid && modificarForm.get('ruta_imagen').touched"
-                        class="text-danger small">
-                      </span>
-                    </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="ruta_imagen">Icono</label>
+                    <input type="file" class="form-control-file"
+                    accept=".PNG" (change)="onChangeFile($event.srcElement.files[0])" id="ruta_imagen">                      
+                    <span *ngIf="!modificarForm.get('ruta_imagen').valid && modificarForm.get('ruta_imagen').touched"
+                      class="text-danger small">
+                    </span>
                   </div>
                 </div>
+              </div>
 
               <div class="form-row">
                   <div class="col">
