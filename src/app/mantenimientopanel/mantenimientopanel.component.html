@@ -42,8 +42,8 @@
                   <td scope="col" class="tama">
                       <div class="toosgle ">
                         <div class="subtoggle align-self-center">
-                            <input type="checkbox" id="switch{{item.id}}" ng-model="item.activo"/>
-                            <label for="switch{{item.id}}" id="change" ></label>
+                            <input type="checkbox" id="switch{{item.id}}" [(ngModel)]="item" (click)="onChangeActivo(item)" [disabled]="isDisabled" />
+                            <label for="switch{{item.id}}" id="item.activo" ></label>
                         </div>
                       </div>
                   </td>

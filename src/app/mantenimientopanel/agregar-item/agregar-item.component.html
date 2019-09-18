@@ -62,7 +62,7 @@
         <div class="col">
           <div class="form-group">
             <label for="descripcion">Descripcion</label>
-            <input class="form-control" type="text" name="descripcion" id="descripcion" formControlName="descripcion">
+            <textarea name="descripcion" id="descripcion" class="form-control" formControlName="descripcion" rows="5" cols="60"></textarea>
             <span *ngIf="!agregarForm.get('descripcion').valid && agregarForm.get('descripcion').touched"
               class="text-danger small">
               Es necesario ingresar el nombre del feriado

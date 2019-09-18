@@ -28,6 +28,7 @@ export class MantenimientopanelComponent implements OnInit {
   item: Item= new Item();
   items: Item[] = [];
   items2: Item[] = [];
+  isDisabled: boolean = false;
 
 
   ngOnInit() {
@@ -92,7 +93,17 @@ export class MantenimientopanelComponent implements OnInit {
     });
 
     bsModalRef.content.itemCreadoEvent.subscribe(() =>
-      this.agregarItemSistema()
+      this.listaritems()
+    )
+  }
+
+
+  onChangeActivo(item : Item){
+    let sds = item.activo;
+    this.itemService.desactivarItem(item).subscribe(
+      item=>{
+        
+      }
     )
   }
 
