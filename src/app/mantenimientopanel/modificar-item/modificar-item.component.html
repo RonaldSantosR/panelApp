@@ -24,11 +24,11 @@
           <div class="form-row">
               <div class="col">
                 <div class="form-group">
-                  <label for="link_ruta">Link ruta</label>
+                  <label for="link_ruta">Ruta Sistema</label>
                   <input class="form-control" type="text" name="link_ruta" id="link_ruta" formControlName="link_ruta">
                   <span *ngIf="!modificarForm.get('link_ruta').valid && modificarForm.get('link_ruta').touched"
                     class="text-danger small">
-                    El link de la ruta no puede estar vacío
+                    Es necesario ingresar la ruta del sistema 
                   </span>
                 </div>
               </div>
@@ -37,11 +37,11 @@
             <div class="form-row">
                 <div class="col">
                   <div class="form-group">
-                    <label for="video">Link video</label>
+                    <label for="video">Ruta Video</label>
                     <input class="form-control" type="text" name="video" id="video" formControlName="video">
                     <span *ngIf="!modificarForm.get('video').valid && modificarForm.get('video').touched"
                       class="text-danger small">
-                      El link del video no puede estar vacio
+                      Es necesario ingresar la ruta del video
                     </span>
                   </div>
                 </div>
@@ -56,8 +56,7 @@
                     </select>
                     <span *ngIf="!modificarForm.get('orden').valid && modificarForm.get('orden').touched"
                       class="text-danger small">
-                      Es necesario la elección de una región
-                    </span>
+                      Es necesario la elección de un Orden</span>
                   </div>
                 </div>
               </div>
