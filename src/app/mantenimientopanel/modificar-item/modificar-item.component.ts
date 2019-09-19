@@ -6,7 +6,7 @@ import { ConfirmModalComponent } from '../../modals/confirm-modal/confirm-modal.
 import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { ItemService } from '../../_Service/item.service';
 import { Subscription } from '../../../../node_modules/rxjs';
-import { NotifierService } from '../../../../node_modules/angular-notifier';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-modificar-item',
@@ -82,8 +82,9 @@ export class ModificarItemComponent implements OnInit {
 
       //bsModalRef.content.confirmarEvent.subscribe(() => {
         this.modificaritemSubscription = this.itemService.modificarItem(item, this.autorizationFile).subscribe(
-          item => {
-            this.notifier.notify('success', 'Se ha modificado el ámbito correctamente');
+          item => {            
+            this.notifier.notify('success', "Se ha modificado la información de la solución correctamente");
+            console.log("holaaaaa");
             this.bsModalRef.hide();
             this.ambitoModificadoEvent.emit(item);
           },
