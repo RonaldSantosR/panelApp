@@ -39,9 +39,9 @@ export class MantenimientopanelComponent implements OnInit {
 
   listaritems() {
     this.items = [];
-    this.itemService.listarItems().subscribe(
-      item => {
-        item.forEach(
+    this.itemService.listarItemsAll().subscribe(
+      items => {
+        items.forEach(
           item => {
             this.items.push({
               id: item.id,
@@ -101,12 +101,21 @@ export class MantenimientopanelComponent implements OnInit {
 
 
   onChangeActivo(item : Item){
-    let sds = item.activo;
+    let vars = item.activo;
+   if(vars){
+     this.itemService.activarItem(item).subscribe(
+       item=>{
+
+       }
+     )
+   }else{
     this.itemService.desactivarItem(item).subscribe(
-      item=>{
-        
+      item =>{
+
       }
     )
+   }
+   
   }
 
 }

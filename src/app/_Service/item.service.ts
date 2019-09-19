@@ -51,7 +51,15 @@ export class ItemService {
   }
 
   desactivarItem(item: Item) : Observable<Item>{
-    return this.requester.put<Item>(this.REQUEST_URL+item.id+"activar",null,{});
+    return this.requester.put<Item>(this.REQUEST_URL+item.id+"/desactivar",null,{});
+  }
+
+  activarItem(item: Item) : Observable<Item>{
+    return this.requester.put<Item>(this.REQUEST_URL+item.id+"/activar",null,{});
+  }
+
+  listarItemsAll() : Observable<Item[]> {
+    return this.requester.get<Item[]>(this.REQUEST_URL,{});
   }
 
 }
