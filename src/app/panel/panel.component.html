@@ -1,17 +1,31 @@
 <div class="container-fluid">
-  <div class="container pb-2 mt-4 ">
-    <br>
-    <div class="row justify-content-center">
-      <label id="texto1" class="sa"></label>
+  <div class="row">
+
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="container pb-2 mt-4 ">
+            <br>
+            <div class="row justify-content-center">
+                  <label id="texto1" class="sa"></label>
+            </div>
+            <div class="row justify-content-center">
+              <strong>
+                <label id="texto2" class="sa2"></label>
+              </strong>
+            </div>
+          </div>  
     </div>
-    <div class="row justify-content-center">
-      <strong>
-        <label id="texto2" class="sa2"></label>
-      </strong>
+    <div class="col-2">
+        <div class="row justify-content-center botonmantenimiento">
+            <button *ngIf="mantenimiento" type="button" class="btn btn-primary" (click)="onEditar()" >Editar sistemas</button>
+          </div>      
+
     </div>
+
+
+
   </div>
 
-  
 
   <br>
 
@@ -33,7 +47,6 @@
     </div>
   </div>
 
-  <button *ngIf="mantenimiento" type="button" class="btn btn-primary" (click)="onEditar()" >Editar sistemas</button>
 
 
 <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
