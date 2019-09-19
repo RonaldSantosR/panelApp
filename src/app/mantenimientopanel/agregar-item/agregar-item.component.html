@@ -15,7 +15,7 @@
             <input class="form-control" type="text" name="nombre" id="nombre" formControlName="nombre">
             <span *ngIf="!agregarForm.get('nombre').valid && agregarForm.get('nombre').touched"
               class="text-danger small">
-              Es necesario ingresar el nombre del feriado
+              Es necesario ingresar el nombre 
             </span>
           </div>
         </div>
@@ -27,7 +27,7 @@
             <label for="linkRuta">Ruta Sistema</label>
             <input class="form-control" type="text" name="linkRuta" id="linkRuta" formControlName="linkRuta">
             <span *ngIf="!agregarForm.get('linkRuta').valid && agregarForm.get('linkRuta').touched" class="text-danger small">
-              Es necesario ingresar la fecha del feriado
+              Es necesario ingresar la ruta del sistema 
             </span>
           </div>
         </div>
@@ -40,7 +40,7 @@
             <input class="form-control" type="text" name="linkVideo" id="linkVideo" formControlName="linkVideo">
             <span *ngIf="!agregarForm.get('linkVideo').valid && agregarForm.get('linkVideo').touched"
               class="text-danger small">
-              Es necesario ingresar el nombre del feriado
+              Es necesario ingresar la ruta del video
             </span>
           </div>
         </div>
@@ -61,11 +61,11 @@
       <div class="form-row">
         <div class="col">
           <div class="form-group">
-            <label for="descripcion">Descripcion</label>
+            <label for="descripcion">Descripción</label>
             <textarea name="descripcion" id="descripcion" class="form-control" formControlName="descripcion" rows="5" cols="60"></textarea>
             <span *ngIf="!agregarForm.get('descripcion').valid && agregarForm.get('descripcion').touched"
               class="text-danger small">
-              Es necesario ingresar el nombre del feriado
+              Es necesario ingresar la Descripción
             </span>
           </div>
         </div>
