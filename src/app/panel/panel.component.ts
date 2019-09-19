@@ -240,10 +240,8 @@ asignarestilofooter(footerPagina : Footer){
   `
     background: `+footerPagina.color+`;
     position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
     clear: both;
+    bottom: 0;
     `;
 }  
 

@@ -9,6 +9,7 @@ import { DomSanitizer , SafeResourceUrl} from '../../../node_modules/@angular/pl
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { AgregarItemComponent } from './agregar-item/agregar-item.component';
 import { ModificarItemComponent } from './modificar-item/modificar-item.component';
+import { NotifierService } from '../../../node_modules/angular-notifier';
 
 
 @Component({
@@ -21,8 +22,7 @@ export class MantenimientopanelComponent implements OnInit {
   constructor(
     public itemService : ItemService,
     public sanitization : DomSanitizer,
-    private modalService: BsModalService,
-
+    private modalService: BsModalService
   ) { }
 
   item: Item= new Item();
