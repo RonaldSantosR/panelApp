@@ -2,6 +2,11 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 
+html{
+  height: 100%;
+  width: 100%;
+}
+
 
 .owl-carousel {
     width: 100% !important;
@@ -44,3 +49,8 @@
    .owl-carousel .next-slide:hover{
    background-position: -24px -53px;
    }  
+
+   .page-container{
+    position: relative;
+    min-height: 100vh;
+   }

@@ -24,7 +24,7 @@
             <table class="table tabla">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="tama"> Sistemas </th>
+                  <th scope="col" class="tama"> Sistema </th>
                   <th scope="col" class="tama"> Editar </th>
                   <th scope="col" class="tama"> Desactivar / Activar</th>
                 </tr>
@@ -42,7 +42,7 @@
                   <td scope="col" class="tama">
                       <div class="toosgle ">
                         <div class="subtoggle align-self-center">
-                            <input type="checkbox" id="switch{{item.id}}" [(ngModel)]="item" (click)="onChangeActivo(item)" [disabled]="isDisabled" />
+                            <input type="checkbox" id="switch{{item.id}}" [(ngModel)]="item.activo" (change)="onChangeActivo(item)"/>
                             <label for="switch{{item.id}}" id="item.activo" ></label>
                         </div>
                       </div>
