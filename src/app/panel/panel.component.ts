@@ -239,9 +239,8 @@ asignarestilofooter(footerPagina : Footer){
   element.style.cssText = 
   `
     background: `+footerPagina.color+`;
-    position: relative;
-    clear: both;
-    bottom: 0;
+    
+    
     `;
 }  
 

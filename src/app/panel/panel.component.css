@@ -1,15 +1,15 @@
 
 p{
-  margin:35px;
-  padding:0;
-  font-size: 16px;  
+  margin: 30px;
+  padding: 0px;
+ font-size: 16px;  
   text-align: justify;
   font-family: Helvetica;
 }
 
 body {
-  min-height: 100vh;
-  position: absolute;
+  min-height: 100%;
+  position: relative;
   margin: 0;
 }
 
@@ -20,9 +20,7 @@ body {
 
 }
 
-.ove{
-  overflow: hidden;
-}
+
 
 .sa{
   font-size: 50px; 
@@ -38,9 +36,11 @@ body {
   
 }
 
-.tamañofooter{
+
+/* .tamañofooter{
   height:70px;
-}
+
+} */
 
 
 @media (max-width: 700px) { 
@@ -62,8 +62,11 @@ body {
   #imagenfooter{
     height: 40%;  
   }
-  .tamañofooter{
+  #footer{
     height:50px;
+  }
+  .content-wrap{
+    padding-bottom: 50px;
   }
 
 }
@@ -71,74 +74,14 @@ body {
 
 .botonmantenimiento{
     margin-top: 70px;
+  
 }
 
+.btn{
+  background-color: #1161A4;
+  border-color: #1161A4;
+}
 
-
-
-/* h2 {  
-
-    font-size: 82px;  
-    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
-    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent; 
-    margin: 0px;
-    line-height:1;
-
-  }  
-
-  h1 {  
-    font-size: 50px;  
-    margin: 0px;
-    background: -webkit-linear-gradient(left top, rgb(0, 72, 133), rgb(0, 72, 133),  rgb(38, 159, 192),rgb(180, 215, 235));
-    background: linear-gradient(to bottom right, rgb(0, 72, 133),rgb(0, 72, 133), rgb(38, 159, 192),rgb(180, 215, 235));
-    -webkit-background-clip: text;  
-    -webkit-text-fill-color: transparent;  
-    line-height:1;
-
-  }   */
-
-
-
-/*   s.owl-carousel {
-    width: 90% !important;
-    margin: 10% auto;
-  }
-   
-  .owl-carousel .owl-nav {
-    overflow: hidden;
-    height: 0px;
-  }
-   
-  .owl-carousel .nav-btn {
-    height: 47px;
-    position: absolute;
-    width: 26px;
-    cursor: pointer;
-    top: 30% !important;
-  }
-   
-  .owl-carousel .owl-prev.disabled,
-  .owl-carousel .owl-next.disabled {
-    pointer-events: none;
-    opacity: 0.2;
-  }
-   
-
-   
-  .owl-carousel .prev-slide:hover {
-    background-position: 0px -53px;
-  }
-   
-  .owl-carousel .next-slide:hover {
-    background-position: -24px -53px;
-  }
-
-
-  .carousell {
-    margin-top:20px;
-  }   */
 
   .slide-image{
     transition: 0.5s;
@@ -157,63 +100,16 @@ body {
   }
 
 #footer{
-  margin-top: 20px;
-
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  
 }
 
-
-/*  i{
-  color: black;
-  } */
-
-
-/*   .owl-carousel {
-    width: 90% !important;
-    margin: 10% auto;
-  }
-
-   
-  .owl-carousel .owl-sliding {
-    overflow: scroll;
-    height: 150px;
-    background: blue
-    }
-  
-   
-  .owl-carousel .nav-btn {
-    height: 47px;
-    position: absolute;
-    width: 26px;
-    cursor: pointer;
-    top: 30% !important;
-  }
-   
-  .owl-carousel .owl-prev.disabled,
-  .owl-carousel .owl-next.disabled {
-    pointer-events: none;
-    opacity: 0.2;
-  }
-   
-  .owl-carousel .prev-slide {
-    background: url(./assets/images/simih.png) no-repeat scroll 0 0;
-    left: -33px;
-  }
-   
-  .owl-carousel .next-slide {
-    background: url(./assets/images/simih.png) no-repeat scroll -24px 0px;
-    right: -33px;
-  }
-   
-  .owl-carousel .prev-slide:hover {
-    background-position: 0px -53px;
-  }
-   
-  .owl-carousel .next-slide:hover {
-    background-position: -24px -53px;
-  }
-
-
- */
+.content-wrap{
+  padding-bottom:70px;
+}
 
 
 
