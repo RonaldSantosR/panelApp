@@ -52,7 +52,7 @@ export class AuthInterceptor implements HttpInterceptor {
                             this.peticionNuevoToken = true;
                             this.browserStorageService.set("token", this.browserStorageService.get("refreshtoken"));
 
-                            return this.requesterService.post<any>('http://localhost:9100/token', null, {}).subscribe(
+                            return this.requesterService.post<any>('http://localhost:8334/token', null, {}).subscribe(
                                 data => {
                                     if (data) {
                                         this.browserStorageService.set("token", data.token);
